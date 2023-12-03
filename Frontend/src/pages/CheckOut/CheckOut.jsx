@@ -177,6 +177,13 @@ const CheckOut = () => {
       console.error("Error creating order:", error);
     }
   };
+    const isVideo = (url) => {
+    if (url) {
+      console.log("url: ", url);
+      console.log(url.endsWith(".mp4"));
+      return url.endsWith(".mp4");
+    }
+  };
 
   return (
     <>
@@ -398,12 +405,22 @@ const CheckOut = () => {
                             <span className="checkout-badge">
                               {item?.quantity}
                             </span>
+                            {isVideo(item?.productId?.images[0]?.url) ? (
+                              <video width={100}
+                              height={100}>
+                                <source
+                                  src={item?.productId?.images[0]?.url}
+                                  type="video/mp4"
+                                />
+                              </video>
+                            ) : (
                             <img
                               width={100}
                               height={100}
                               src={item?.productId?.images[0]?.url}
-                              alt="product"
+                              alt="watch"
                             />
+                            )}
                           </div>
                           <div>
                             <h5 className="total-price checkout-title">
