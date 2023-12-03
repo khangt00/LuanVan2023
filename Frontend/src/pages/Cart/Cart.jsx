@@ -78,17 +78,17 @@ const Cart = () => {
 
   return (
     <>
-      <Meta title={"Cart"} />
-      <BreadCrumb title="Cart" />
+      <Meta title={"Giỏ hàng"} />
+      <BreadCrumb title="Giỏ hàng" />
       <section className="cart-wrapper home-wrapper-02">
         <div className="cart-container-01">
           <div className="cart-row-01">
             <div className="cart-coloum-1">
               <div className="cart-div-01">
-                <h4 className="cart-coloum-01">Product</h4>
-                <h4 className="cart-coloum-02">Price</h4>
-                <h4 className="cart-coloum-03">Quantity</h4>
-                <h4 className="cart-coloum-04">Total</h4>
+                <h4 className="cart-coloum-01">Sản phẩm</h4>
+                <h4 className="cart-coloum-02">Tiền</h4>
+                <h4 className="cart-coloum-03">Số lượng</h4>
+                <h4 className="cart-coloum-04">Tổng</h4>
               </div>
               {userCartState &&
                 userCartState?.map((item, index) => {
@@ -130,7 +130,7 @@ const Cart = () => {
                               gap: "1rem",
                             }}
                           >
-                            Color :
+                            Màu :
                             <ul className="colors">
                               <li
                                 style={{ backgroundColor: item?.color?.title }}
@@ -145,12 +145,12 @@ const Cart = () => {
                               gap: "1rem",
                             }}
                             >
-                            Size : {selectedSize}
+                            Tình trạng : {selectedSize}
                           </p>
                         </div>
                       </div>
                       <div className="cart-coloum-02">
-                        <h5 className="price">$ {item?.price}</h5>
+                        <h5 className="price">VND {item?.price}</h5>
                       </div>
                       <div className="cart-coloum-03">
                         <div>
@@ -184,7 +184,7 @@ const Cart = () => {
                       </div>
                       <div className="cart-coloum-04">
                         <h5 className="price">
-                          $ {item?.price * item?.quantity}
+                          VND {item?.price * item?.quantity}
                         </h5>
                       </div>
                     </div>
@@ -194,16 +194,16 @@ const Cart = () => {
             <div className="cart-2-coloum-1">
               <div className="cart-div-04">
                 <Link id="cart-link-no-1" to="/product" className="button">
-                  Continue To Shopping
+                  Tiếp tục mua hàng
                 </Link>
                 {(totalAmount !== null || totalAmount !== 0) && (
                   <div className="cart-div-05">
                     <h4 className="cart-p-h">Tổng tiền : VND {totalAmount} </h4>
                     <p className="cart-p-h">
-                      Taxes and shipping calculated at checkout
+                      Phí vận chuyển được tính khi thanh toán
                     </p>
                     <Link id="cart-link-no-2" to="/checkout" className="button">
-                      Checkout
+                      Thanh toán
                     </Link>
                   </div>
                 )}

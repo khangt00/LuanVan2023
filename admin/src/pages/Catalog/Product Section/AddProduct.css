@@ -13,7 +13,7 @@
   line-height: 1.5;
   cursor: pointer;
   margin-top: 0.7rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; 
 }
 .long-6 {
   width: 100%;
@@ -28,24 +28,25 @@
 }
 .addProd-div-2 {
   position: relative;
+  width: 30px;
+  height: 250px;
 }
 .showimages {
   display: flex;
   flex-wrap: wrap;
   gap: 3px;
-  margin: 10px;
 }
 .close-button {
   position: absolute;
-  background-color: transparent;
+  top: 4px;
+  right: 4px;
+  background: transparent;
   border: 0;
   padding: 0;
   cursor: pointer;
   outline: none;
-  width: 1.5em;
-  height: 1.5em;
-  top: 4px;
-  right: 4px;
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
 }
 
 .close-button::before,
@@ -73,11 +74,6 @@
   box-shadow: 0 0 0 0.25em rgba(0, 0, 0, 0.25);
 }
 
-/* Optional: Adjust the size and color of the close button */
-.close-button {
-  font-size: 1.5em;
-  color: white;
-}
 
 .add-select {
   width: 100%;

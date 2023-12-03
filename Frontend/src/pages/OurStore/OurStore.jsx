@@ -117,8 +117,8 @@ const OurStore = () => {
 
   return (
     <>
-      <Meta title={"Our Store"} />
-      <BreadCrumb title="Our Store" />
+      <Meta title={"Cửa hàng"} />
+      <BreadCrumb title="Cửa hàng" />
       <div
         className="store-wrapper home-wrapper-02"
         style={{ paddingTop: 48, paddingBottom: 48 }}
@@ -127,7 +127,7 @@ const OurStore = () => {
           <div className="store-row-01">
             <div className="store-coloum-01">
               <div className="filter-card">
-                <h3 className="filter-title">Shop By Categories</h3>
+                <h3 className="filter-title">Danh mục cửa hàng</h3>
                 <div>
                   <ul style={{ paddingLeft: 0 }}>
                     {categories &&
@@ -146,7 +146,7 @@ const OurStore = () => {
                 </div>
               </div>
               <div className="filter-card-filter">
-                <h3 className="filter-title">Filter By</h3>
+                <h3 className="filter-title">Lọc theo</h3>
                 <div>
                   <h5 className="sub-title">Giá tiền</h5>
                   <div
@@ -157,7 +157,7 @@ const OurStore = () => {
                         type="number"
                         className="form-control"
                         id="floatingInput"
-                        placeholder="From"
+                        placeholder="Từ"
                         onChange={(e) => setMinPrice(e.target.value)}
                       />
                     </div>
@@ -167,7 +167,7 @@ const OurStore = () => {
                           type="number"
                           className="form-control"
                           id="floatingInput"
-                          placeholder="To"
+                          placeholder="Đến"
                           onChange={(e) => setMaxPrice(e.target.value)}
                         />
                       </div>
@@ -176,7 +176,7 @@ const OurStore = () => {
                 </div>
               </div>
               <div className="filter-card">
-                <h3 className="filter-title">Product Tags</h3>
+                <h3 className="filter-title">Thẻ sản phẩm</h3>
                 <div>
                   <div className="product-tags">
                     {tags &&
@@ -195,7 +195,7 @@ const OurStore = () => {
                 </div>
               </div>
               <div className="filter-card">
-                <h3 className="filter-title">Product Brands</h3>
+                <h3 className="filter-title">Thương hiệu sản phẩm</h3>
                 <div>
                   <div className="product-tags">
                     {brands &&
@@ -214,7 +214,7 @@ const OurStore = () => {
                 </div>
               </div>
               <div className="filter-card">
-                <h3 className="filter-title">Colors</h3>
+                <h3 className="filter-title">Màu</h3>
                 <div>
                   <div className="product-tags">
                     {colorState &&
@@ -236,7 +236,7 @@ const OurStore = () => {
               <div className="filter-sort-grid">
                 <div className="store-div-003">
                   <div className="store-div-004">
-                    <p className="store-p-001">Sort By:</p>
+                    <p className="store-p-001">Sắp xếp:</p>
                     <select
                       className="form-control form-selects"
                       name=""
@@ -244,17 +244,17 @@ const OurStore = () => {
                       onChange={(e) => setSort(e?.target?.value)}
                       style={{ display: window.innerWidth <= 768 ? "none" : "block" }}
                     >
-                      <option value="title">Alphabetically, A-Z</option>
-                      <option value="-title">Alphabetically, Z-A</option>
-                      <option value="price">Price, low to high</option>
-                      <option value="-price">Price, high to low</option>
-                      <option value="createdAt">Date, old to new</option>
-                      <option value="-createdAt">Date, new to old</option>
+                      <option value="title">Theo chữ cái, A-Z</option>
+                      <option value="-title">Theo chữ cái, Z-A</option>
+                      <option value="price">Giá tiền, thấp tới cao</option>
+                      <option value="-price">Giá tiền, cao tới thấp</option>
+                      <option value="createdAt">Ngày tạo, cũ đến mới</option>
+                      <option value="-createdAt">Ngày tạo, mới đến cũ</option>
                     </select>
                   </div>
                   <div className="store-div-005">
                     <p className="total-products">
-                      Total Products {productState && productState?.length}
+                      Tổng sản phẩm {productState && productState?.length}
                     </p>
                     <div
                       style={{

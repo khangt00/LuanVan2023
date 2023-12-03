@@ -3,7 +3,7 @@ import "./ProductCard.css";
 import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from "react-router-dom";
 import wish from "../../images/wish.svg";
-import watch1 from "../../images/watch-1.jpg";
+// import watch1 from "../../images/watch-1.jpg";
 import view from "../../images/view.svg";
 import {useDispatch} from "react-redux";
 import {addToWishlist} from "../../features/product/productSlice"

@@ -37,10 +37,10 @@ const SpecialProduct = (props) => {
                 activeColor="#ffd700"
               />
               <p className="price">
-                <span className="red-p">${price}</span>&nbsp;
+                <span className="red-p">VND {price}</span>&nbsp;
               </p>
               <div className="prod-count">
-                <p>stock: {quantity}</p>
+                <p>Kho : {quantity}</p>
                 <div className="progress">
                   <div
                     className="progress-bar"
@@ -52,7 +52,7 @@ const SpecialProduct = (props) => {
                   ></div>
                 </div>
               </div>
-              <Link to={"/product/"+id} className="button">View</Link>
+              <Link to={"/product/"+id} className="button">Xem</Link>
             </div>
           </div>
         </div>

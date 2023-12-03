@@ -187,8 +187,8 @@ const CheckOut = () => {
 
   return (
     <>
-      <Meta title={"CheckOut"} />
-      <BreadCrumb title="CheckOut" />
+      <Meta title={"Thanh toán"} />
+      <BreadCrumb title="Thanh toán" />
       <div className="checkout-wrapper home-wrapper-02">
         <div className="checkout-container-01">
           <div className="checkout-row-01">
@@ -199,22 +199,22 @@ const CheckOut = () => {
                   <ol className="breadcrumb-1 total-price ">
                     <li className="breadcrumb-item total-price ">
                       <Link className="checkout-link-2" to="/cart">
-                        Cart
+                        Giỏ hàng
                       </Link>
                     </li>
                     <li
                       className="breadcrumb-item total-price  active"
                       aria-current="page"
                     >
-                      Information
+                      Thông tin
                     </li>
                     <li className="breadcrumb-item  total-price active">
                       <li className="checkout-link-2" to="/cart">
-                        Shipping
+                        Giao hàng
                       </li>
                     </li>
                     <li className="breadcrumb-item active" aria-current="page">
-                      Payment
+                      Thanh toán
                     </li>
                   </ol>
                 </nav>
@@ -248,7 +248,7 @@ const CheckOut = () => {
                   <div className="checkout-div-03">
                     <input
                       type="text"
-                      placeholder="First Name"
+                      placeholder="Họ"
                       className="checkout-form-control"
                       name="firstName"
                       id=""
@@ -263,7 +263,7 @@ const CheckOut = () => {
                   <div className="checkout-div-03">
                     <input
                       type="text"
-                      placeholder="Last Name"
+                      placeholder="Tên"
                       className="checkout-form-control"
                       name="lastName"
                       id=""
@@ -278,7 +278,7 @@ const CheckOut = () => {
                   <div className="checkout-div-02">
                     <input
                       type="text"
-                      placeholder="Address"
+                      placeholder="Địa chỉ"
                       className="checkout-form-control"
                       name="address"
                       id=""
@@ -293,7 +293,7 @@ const CheckOut = () => {
                   <div className="checkout-div-02">
                     <input
                       type="text"
-                      placeholder="Appartment,suite . etc"
+                      placeholder="Số nhà"
                       className="checkout-form-control"
                       name="other"
                       id=""
@@ -308,7 +308,7 @@ const CheckOut = () => {
                   <div className="checkout-div-03">
                     <input
                       type="text"
-                      placeholder="city"
+                      placeholder="Thành phố"
                       className="checkout-form-control"
                       name="city"
                       id=""
@@ -323,7 +323,7 @@ const CheckOut = () => {
                   <div className="checkout-div-03">
                     <input
                       type="text"
-                      placeholder="email"
+                      placeholder="Email"
                       className="checkout-form-control"
                       name="email"
                       id=""

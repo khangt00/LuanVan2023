@@ -10,7 +10,7 @@ const Size = (props) => {
   console.log("selects  = " , sizeData);
   return (
     <div className="sizes">
-      <h3 className="product-heading">Size:</h3>
+      <h3 className="product-heading">Tình trạng:</h3>
       <ul>
         {sizeData &&
           sizeData?.map((item, index) => (

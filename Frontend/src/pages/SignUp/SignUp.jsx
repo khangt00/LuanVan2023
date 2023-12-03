@@ -36,14 +36,14 @@ const navigate = useNavigate();
 
   return (
     <>
-    <Meta title={"Create Account"} />
-      <BreadCrumb title="Create Account" />
+    <Meta title={"Tạo tài khoản"} />
+      <BreadCrumb title="Tạo tài khoản" />
     <div className="signup-wrapper home-wrapper-02">
        <div className='signup-container-01'>
        <div className="signup-row-01">
           <div className="signup-coloum-01">
             <div className="auth-card">
-              <h3 className="signup-h3-01">Create Account</h3>
+              <h3 className="signup-h3-01">Tạo tài khoản</h3>
               <form
                 onSubmit={formik.handleSubmit}
                 action=""
@@ -57,7 +57,7 @@ const navigate = useNavigate();
                   <input
                     type="text"
                     name="firstname"
-                    placeholder="First Name"
+                    placeholder="Họ"
                     className="form-control"
                     value={formik.values.firstname}
                     onChange={formik.handleChange("firstname")}
@@ -71,7 +71,7 @@ const navigate = useNavigate();
                   <input
                     type="text"
                     name="lastname"
-                    Placeholder="Last Name"
+                    Placeholder="Tên"
                     className="form-control "
                     value={formik.values.lastname}
                     onChange={formik.handleChange("lastname")}
@@ -99,7 +99,7 @@ const navigate = useNavigate();
                   <input
                     type="tel"
                     name="mobile"
-                    Placeholder="Mobile"
+                    Placeholder="Số điện thoại"
                     className="form-control "
                     value={formik.values.mobile}
                     onChange={formik.handleChange("mobile")}
@@ -113,7 +113,7 @@ const navigate = useNavigate();
                   <input
                     type="password"
                     name="password"
-                    Placeholder="Password"
+                    Placeholder="Mật khẩu"
                     className="form-control "
                     value={formik.values.password}
                     onChange={formik.handleChange("password")}
@@ -126,7 +126,7 @@ const navigate = useNavigate();
                 <div>
                   <div className="signup-div-01">
                     <button style={{ border: "0" }} className="button">
-                      Create
+                      Tạo
                     </button>
                   </div>
                 </div>

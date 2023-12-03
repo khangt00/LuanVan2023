@@ -193,7 +193,7 @@ const SingleProduct = () => {
                   style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
                   className="border-bottom"
                 >
-                  <p className="price-product">$ {productState?.price}</p>
+                  <p className="price-product">VND {productState?.price}</p>
                   <div className="main-product-div-01">
                     <ReactStars
                       count={5}
@@ -204,7 +204,7 @@ const SingleProduct = () => {
                     />
                   </div>
                   <a className="review-btn" href="#review">
-                    Write a Review
+                    Viết đánh giá
                   </a>
                 </div>
                 <div
@@ -212,24 +212,24 @@ const SingleProduct = () => {
                   className="border-bottom"
                 >
                   <div className="main-product-div-02">
-                    <h3 className="product-heading">Type :</h3>
-                    <p className="product-data">Watch</p>
+                    <h3 className="product-heading">Đồ chơi :</h3>
+                    <p className="product-data">Đồ chơi cũ</p>
                   </div>
                   <div className="main-product-div-02">
-                    <h3 className="product-heading">Brand :</h3>
+                    <h3 className="product-heading">Thương hiệu:</h3>
                     <p className="product-data">{productState?.brand}</p>
                   </div>
                   <div className="main-product-div-02">
-                    <h3 className="product-heading">Category :</h3>
+                    <h3 className="product-heading">Danh mục :</h3>
                     <p className="product-data">{productState?.category}</p>
                   </div>
                   <div className="main-product-div-02">
-                    <h3 className="product-heading">Tags :</h3>
+                    <h3 className="product-heading">Thẻ :</h3>
                     <p className="product-data">{productState?.tags}</p>
                   </div>
                   <div className="main-product-div-02">
-                    <h3 className="product-heading">Availability :</h3>
-                    <p className="product-data">In Stock</p>
+                    <h3 className="product-heading">Tình trạng kho :</h3>
+                    <p className="product-data">Trong kho</p>
                   </div>
                   
                       <Size setSize={setSize}  sizeData={productState?.size} />
@@ -237,7 +237,7 @@ const SingleProduct = () => {
                   {alreadyAdded === false && (
                     <>
                       <div className="main-product-div-05">
-                        <h3 className="product-heading">Color :</h3>
+                        <h3 className="product-heading">Màu :</h3>
                         <Color
                           setColor={setColor}
                           colorData={productState?.color}
@@ -248,7 +248,7 @@ const SingleProduct = () => {
                   <div className="main-product-div-06">
                     {alreadyAdded === false && (
                       <>
-                        <h3 className="product-heading">Quantity :</h3>
+                        <h3 className="product-heading">Số lượng :</h3>
                         <div className="">
                           <input
                             type="number"
@@ -279,7 +279,7 @@ const SingleProduct = () => {
                           alreadyAdded ? navigate("/cart") : uploadCart();
                         }}
                       >
-                        {alreadyAdded ? "Go To Cart" : "Add To Cart"}
+                        {alreadyAdded ? "Đi đến giỏ hàng" : "Thêm vào giỏ hàng"}
                       </button>
                     </div>
                   </div>
@@ -287,33 +287,33 @@ const SingleProduct = () => {
                     <div>
                       <a className="main-product-link-02" href="">
                         <TbGitCompare className="main-icons-01" />
-                        Add to compare
+                        Thêm so sánh
                       </a>
                     </div>
                     <div>
                       <a className="main-product-link-02" href="">
                         <AiOutlineHeart className="main-icons-01" />
-                        Add to Wishlist
+                        Thêm danh sách yêu thích
                       </a>
                     </div>
                   </div>
                   <div className="main-product-div-09">
-                    <h3 className="product-heading">Shipping & Returns :</h3>
+                    <h3 className="product-heading">Vận chuyển và trả hàng :</h3>
                     <p className="product-data">
-                      Free shipping and returns available on all orders! <br />{" "}
-                      We ship all US domestic orders within{" "}
-                      <b> 5-10 business days!</b>
+                      Miễn phí vận chuyển và trả lại có sẵn trên tất cả các đơn đặt hàng! <br />{" "}
+                      Vận chuyển các đơn hàng trong vòng{" "}
+                      <b>5 đến 10 ngày làm việc</b>
                     </p>
                   </div>
                   <div className="main-product-div-02">
-                    <h3 className="product-heading">Product Link:</h3>
+                    <h3 className="product-heading">Đường dẫn sản phẩm:</h3>
                     <a
                       href="javascript:void(0)"
                       onClick={() => {
                         copyToClipboard(window.location.href);
                       }}
                     >
-                      Copy Product Link
+                      Lấy đường dẫn sản phẩm
                     </a>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ const SingleProduct = () => {
         <div className="single-description-container-01">
           <div className="single-description-row-01">
             <div className="single-description-coloum-01">
-              <h4>Description</h4>
+              <h4>Mô tả</h4>
               <div className="single-description-div-01">
                 <p
                   dangerouslySetInnerHTML={{
@@ -342,11 +342,11 @@ const SingleProduct = () => {
         <div className="review-container-01 ">
           <div className="review-row-o1">
             <div className="review-coloum-01">
-              <h3>Reviews</h3>
+              <h3>Đánh giá</h3>
               <div className="review-inner-wrapper">
                 <div className="review-head">
                   <div>
-                    <h4>Customer Reviews</h4>
+                    <h4>Khách hàng đánh giá</h4>
                     <div className="review-div-01">
                       <ReactStars
                         count={5}
@@ -360,13 +360,13 @@ const SingleProduct = () => {
                   {orderedProduct && (
                     <div>
                       <a className="review-link" href="">
-                        Write a Review
+                        Viết đánh đánh giá
                       </a>
                     </div>
                   )}
                 </div>
                 <div className="review-form">
-                  <h4>Write A Review</h4>
+                  <h4>Viết đánh giá</h4>
                   <div>
                     <ReactStars
                       count={5}
@@ -396,7 +396,7 @@ const SingleProduct = () => {
                       className="button"
                       type="button"
                     >
-                      Submit Review
+                      Gửi đánh giá
                     </button>
                   </div>
                 </div>
@@ -434,7 +434,7 @@ const SingleProduct = () => {
         <div className="single-product-container-01">
           <div className="single-product-row-01">
             <div className="single-product-coloum-01">
-              <h3 className="section-heading">Our Popular Products</h3>
+              <h3 className="section-heading">Sản phẩm phổ biến</h3>
             </div>
           </div>
           <div className="single-product-row-two-01">

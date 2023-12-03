@@ -71,7 +71,7 @@ const Header = () => {
               <p className="paragraph-2">
                 Hotline:
                 <a style={{ color: "white" }} href="tel:+923249090438">
-                  +923249090438
+                  +822186757
                 </a>
               </p>
             </div>
@@ -101,7 +101,7 @@ const Header = () => {
                   paginate={paginate}
                   minLength={1}
                   labelKey={"name"}
-                  placeholder="Search For Products Here"
+                  placeholder="Tìm sản phẩm tại đây..."
                 />
                 <span className="input-group-text" id="basic-addon2">
                   <BsSearch />
@@ -122,7 +122,7 @@ const Header = () => {
                   >
                     <img src={wishlist} alt="wishlist" />
                     <p style={{ marginBottom: 0 }}>
-                      Favourite <br /> wishlist
+                      Danh sách <br /> yêu thích
                     </p>
                   </Link>
                 </div>
@@ -139,7 +139,7 @@ const Header = () => {
                     <img src={user} alt="user" />
                     {authState?.user === null ? (
                       <p style={{ marginBottom: 0 }}>
-                        Log in <br /> My Account
+                        Đăng nhập <br /> Tài khoản của tôi
                       </p>
                     ) : (
                       <p style={{ marginBottom: 0 }}>
@@ -166,7 +166,7 @@ const Header = () => {
                         {cartState?.length ? cartState?.length : 0}
                       </span>
                       <p style={{ marginBottom: 0 }}>
-                        $ {totalAmount ? totalAmount : 0}
+                        VND {totalAmount ? totalAmount : 0}
                       </p>
                     </div>
                   </Link>
@@ -186,7 +186,7 @@ const Header = () => {
                     <button className="dropbtn">
                       <img src={menu} alt="" />
                       <span className="spann" style={{ marginLeft: 10 }}>
-                       <span> Shop</span> Categories
+                       <span> Danh mục</span> Cửa hàng
                       </span>
                     </button>
                     <ul className="dropdown-menu dropdown-button" aria-labelledby="dropdownMenuButton1">
@@ -213,13 +213,13 @@ const Header = () => {
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 15 }}
                   >
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/product">Our Store</NavLink>
-                    <NavLink to="/my-orders">My Orders</NavLink>
-                    <NavLink to="/blogs">Blogs</NavLink>
-                    <NavLink to="/contact">Contact</NavLink>
+                    <NavLink to="/">Trang chủ</NavLink>
+                    <NavLink to="/product">Cửa hàng</NavLink>
+                    <NavLink to="/my-orders">Đơn hàng của tôi</NavLink>
+                    <NavLink to="/blogs">Bài viết</NavLink>
+                    <NavLink to="/contact">Liên hệ</NavLink>
                     <button onClick={handleLogout} className="l-out">
-                      LogOut
+                      Đăng xuất
                     </button>
                   </div>
                 </div>

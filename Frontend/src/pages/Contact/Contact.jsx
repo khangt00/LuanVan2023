@@ -65,7 +65,7 @@ const Contact = () => {
                       <input
                         type="text"
                         className="form-control-contact"
-                        placeholder="Name"
+                        placeholder="Tên"
                         name="name"
                         value={formik.values.name}
                         onChange={formik.handleChange("name")}
@@ -94,7 +94,7 @@ const Contact = () => {
                         type="tel"
                         name="mobile"
                         className="form-control-contact"
-                        placeholder="Mobile Number"
+                        placeholder="Số điện thoại"
                         value={formik.values.mobile}
                         onChange={formik.handleChange("mobile")}
                         onBlur={formik.handleBlur("mobile")}

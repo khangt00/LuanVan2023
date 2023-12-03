@@ -54,101 +54,101 @@ const Mainlayout = () => {
             {
               key: "customers",
               icon: <AiOutlineUser style={{ fontSize: "1.2rem" }} />,
-              label: "Customers",
+              label: "Khách hàng",
             },
             {
               key: "Catalog",
               icon: <RxDashboard style={{ fontSize: "1.2rem" }} />,
-              label: "Catalog",
+              label: "Danh mục",
               children: [
                 {
                   key: "product",
                   icon: <BsCart4 style={{ fontSize: "1.2rem" }} />,
-                  label: "Add Product",
+                  label: "Thêm sản phẩm",
                 },
                 {
                   key: "product-list",
                   icon: <BsCart4 style={{ fontSize: "1.2rem" }} />,
-                  label: "Product List",
+                  label: "Danh sách sản phẩm",
                 },
                 {
                   key: "brand",
                   icon: <SiBrandfolder style={{ fontSize: "1.2rem" }} />,
-                  label: "Brand",
+                  label: "Thương hiệu",
                 },
                 {
                   key: "list-brand",
                   icon: <SiBrandfolder style={{ fontSize: "1.2rem" }} />,
-                  label: "Brand-list",
+                  label: "Danh sách thương hiệu",
                 },
                 {
                   key: "category",
                   icon: <MdCategory style={{ fontSize: "1.2rem" }} />,
-                  label: "Category",
+                  label: "Danh mục",
                 },
                 {
                   key: "category-list",
                   icon: <MdCategory style={{ fontSize: "1.2rem" }} />,
-                  label: "Category List",
+                  label: "Danh sách danh mục",
                 },
                 {
                   key: "color",
                   icon: <VscSymbolColor style={{ fontSize: "1.2rem" }} />,
-                  label: "Color",
+                  label: "Màu",
                 },
                 {
                   key: "color-list",
                   icon: <VscSymbolColor style={{ fontSize: "1.2rem" }} />,
-                  label: "Color List",
+                  label: "Danh sách màu",
                 },
               ],
             },
             {
               key: "orders",
               icon: <FaClipboardList style={{ fontSize: "1.2rem" }} />,
-              label: "Orders",
+              label: "Đơn hàng",
             },
             {
               key: "size",
               icon: <SiZend style={{ fontSize: "1.2rem" }} />,
-              label: "Size",
+              label: "Tình trạng",
               children: [
                 {
                   key: "addsize",
                   icon: <RiCouponLine style={{ fontSize: "1.2rem" }} />,
-                  label: "Add Size",
+                  label: "Thêm tình trạng",
                 },
                 {
                   key: "size-list",
                   icon: <FaListUl style={{ fontSize: "1.2rem" }} />,
-                  label: "Size List",
+                  label: "Danh sách tình trạng",
                 },
               ],
             },
             {
               key: "blogs",
               icon: <SiBloglovin style={{ fontSize: "1.2rem" }} />,
-              label: "Blogs",
+              label: "Bài viết",
               children: [
                 {
                   key: "blog",
                   icon: <IoIosAddCircle style={{ fontSize: "1.2rem" }} />,
-                  label: "Add Blog",
+                  label: "Thêm bài viết",
                 },
                 {
                   key: "blog-list",
                   icon: <FaListUl style={{ fontSize: "1.2rem" }} />,
-                  label: "Blog List",
+                  label: "Danh sách bài viết",
                 },
                 {
                   key: "blog-category",
                   icon: <IoIosAddCircle style={{ fontSize: "1.2rem" }} />,
-                  label: "Add Blog Category",
+                  label: "Thêm danh mục bài viết",
                 },
                 {
                   key: "blog-category-list",
                   icon: <FaListUl style={{ fontSize: "1.2rem" }} />,
-                  label: "Blog Category List",
+                  label: "Danh sách danh mục",
                 },
               ],
             },
@@ -172,12 +172,12 @@ const Mainlayout = () => {
             {
               key: "enquiries",
               icon: <FaClipboardList style={{ fontSize: "1.2rem" }} />,
-              label: "Enquiries",
+              label: "Yêu cầu",
             },
             {
               key: "signout",
               icon: <CiLogout style={{ fontSize: "1.2rem" }} />,
-              label: "Sign Out",
+              label: "Đăng xuất",
             },
            
           ]}

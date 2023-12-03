@@ -25,7 +25,7 @@ const Footer = () => {
                 className="footer-top-data"
               >
                 <img src={newsletter} alt="newsletter" />
-                <h2 className="p-a">Sign Up For Newsletter</h2>
+                <h2 className="p-a">Đăng ký nhận tin tức</h2>
               </div>
             </div>
             <div className="coloum-c ">
@@ -33,7 +33,7 @@ const Footer = () => {
                 <input
                   type="text"
                   className="form-control-2"
-                  placeholder="Your Email Address"
+                  placeholder="Địa chỉ email của bạn"
                   aria-label="Your Email Address"
                   aria-describedby="basic-addon2"
                 />
@@ -42,7 +42,7 @@ const Footer = () => {
                   className="input-group-text-2"
                   id="basic-addon2"
                 >
-                  Subscribe
+                  Đăng ký
                 </button>
               </div>
             </div>
@@ -58,11 +58,11 @@ const Footer = () => {
               <span className="accordion-icon">
                   {/* <BsChevronDown className="bs-icon"/> */}
                 </span>
-                Contact Us 
+                Liên hệ chúng tôi
               </h4>
               <div id="accordion1"  className="accordion-content">
                 <address style={{ color: "white", marginLeft: 20 }}>
-                  Nijeria : 123 something
+                  Việt Nam : Cần Thơ
                   <br />
                   <br />
                   ZipCode 12345
@@ -118,14 +118,14 @@ const Footer = () => {
               <span className="accordion-icon">
                   <BsChevronDown className="bs-icon"/>
                 </span>
-                Information
+                Thông tin
               </h4>
               <div id="accordion2"  className="footer-links accordion-content">
-                <Link to='/privacy-policy' className="links-20">Privacy Policy</Link>
-                <Link to='/refund-policy' className="links-20">Refund Policy</Link>
-                <Link to='/shipping-policy' className="links-20">Shipping Policy</Link>
-                <Link to='/terms-services' className="links-20">Terms & Conditions </Link>
-                <Link to='/blogs' className="links-20">Blogs</Link>
+                <Link to='/privacy-policy' className="links-20">Chính sách bảo mật</Link>
+                <Link to='/refund-policy' className="links-20">Chính sách trả hàng</Link>
+                <Link to='/shipping-policy' className="links-20">Chính sách vận chuyển</Link>
+                <Link to='/terms-services' className="links-20">Điều khoản và điều kiện</Link>
+                <Link to='/blogs' className="links-20">Bài viết</Link>
               </div>
             </div>
             <div className="coloum-40">
@@ -133,7 +133,7 @@ const Footer = () => {
               <span className="accordion-icon">
                   <BsChevronDown className="bs-icon"/>
                 </span>
-                Account
+                Tài khoản
               </h4>
               <div  id="accordion3"  className="footer-links accordion-content">
                 <Link className="links-20">Faq</Link>
@@ -145,13 +145,13 @@ const Footer = () => {
               <span className="accordion-icon">
                   <BsChevronDown className="bs-icon"/>
                 </span>
-                Quick Links
+                Đường dẫn nhanh
               </h4>
               <div id="accordion4"  className="footer-links accordion-content">
-                <Link to={`/product?category=Lapotop`} className="links-20">Laptops</Link>
-                <Link to={`/product?category=Shoes`} className="links-20">Shoes</Link>
-                <Link to={`/product?category=Cell%20Phones`} className="links-20">Cell Phones</Link>
-                <Link to={`/product?category=Shirts`} className="links-20">Shirts</Link>
+                <Link to={`/product?category=Lapotop`} className="links-20">Toys</Link>
+                <Link to={`/product?category=Shoes`} className="links-20">Figure</Link>
+                {/* <Link to={`/product?category=Cell%20Phones`} className="links-20">Cell Phones</Link> */}
+                {/* <Link to={`/product?category=Shirts`} className="links-20">Shirts</Link> */}
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@ const Footer = () => {
           <div className="row-b">
             <div className="coloum-b">
               <p className="p-1">
-              &copy; {new Date().getFullYear()}: Powered by HOC
+              &copy; {new Date().getFullYear()}: Powered by KhangT00
               </p>
             </div>
           </div>

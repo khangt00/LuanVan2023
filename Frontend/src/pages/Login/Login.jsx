@@ -36,14 +36,14 @@ const Login = () => {
   }, [authState])
   return (
     <>
-      <Meta title={"Login"} />
-      <BreadCrumb title="Login" />
+      <Meta title={"Đăng nhập"} />
+      <BreadCrumb title="Đăng nhập" />
       <div className="login-wrapper home-wrapper-02">
         <div className="login-container-01">
         <div className="login-row-01">
           <div className="login-coloum-01">
             <div className="auth-card">
-              <h3 className="login-h3-01">Login</h3>
+              <h3 className="login-h3-01">Đăng nhập</h3>
               <form
                onSubmit={formik.handleSubmit}
                 action=""
@@ -71,7 +71,7 @@ const Login = () => {
                   <input
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="Mật khẩu"
                     className="form-control "
                     value={formik.values.password}
                     onChange={formik.handleChange("password")}
@@ -82,13 +82,13 @@ const Login = () => {
                   </div>
                 </div>
                 <div>
-                  <Link className="login-link-01" to="/forgot-password">Forgot Your Password?</Link>
+                  <Link className="login-link-01" to="/forgot-password">Quên mật khẩu?</Link>
                   <div className="login-div-01">
                     <button style={{ border: "0" }} className="button" type="submit">
-                      Login
+                      Đăng nhập
                     </button>
                     <Link to="/signup" className="button signup">
-                      SignUp
+                      Đăng ký
                     </Link>
                   </div>
                 </div>

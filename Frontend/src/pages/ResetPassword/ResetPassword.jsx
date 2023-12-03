@@ -39,7 +39,7 @@ const ResetPassword = () => {
           <div className="reset-row-01">
             <div className="reset-coloum-01">
               <div className="auth-card">
-                <h3 className="reset-h3-01">Reset Password</h3>
+                <h3 className="reset-h3-01">Đặt lại mật khẩu</h3>
                 <form
                  onSubmit={formik.handleSubmit}
                   action=""
@@ -53,7 +53,7 @@ const ResetPassword = () => {
                     <input
                       type="password"
                       name="password"
-                      Placeholder="Password"
+                      Placeholder="Mật khẩu"
                       className="form-control "
                       value={formik.values.password}
                     onChange={formik.handleChange("password")}
@@ -66,7 +66,7 @@ const ResetPassword = () => {
                   <div>
                     <div className="reset-div-01">
                       <button style={{ border: "0" }} className="button">
-                        Update
+                        Cập nhật
                       </button>
                     </div>
                   </div>

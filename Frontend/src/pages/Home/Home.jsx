@@ -94,7 +94,7 @@ const Home = () => {
 
   return (
     <>
-      <Meta title={"HOC"} />
+      <Meta title={"TOY 2HAND"} />
       <section
         className="home-wrapper-1"
         style={{ paddingTop: 48, paddingBottom: 48 }}
@@ -184,36 +184,36 @@ const Home = () => {
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <img src={service1} alt="services" />
                   <div>
-                    <h6>Free Shipping</h6>
-                    <p>From All order over $5</p>
+                    <h6>Miễn phí giao hàng</h6>
+                    <p>Từ tất cả đơn hàng trên 50.000 VND</p>
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <img src={service2} alt="services" />
                   <div>
-                    <h6>Daily Suprise Offers </h6>
-                    <p>save upto 25% off</p>
+                    <h6>Ưu đãi bất ngờ </h6>
+                    <p>Giảm giá lên đến 25%</p>
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <img src={service3} alt="services" />
                   <div>
-                    <h6>Support 24/7</h6>
-                    <p>Shop with an expert</p>
+                    <h6>Hỗ trợ 24/7</h6>
+                    <p>Mua sắm cùng mọi người</p>
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <img src={service4} alt="services" />
                   <div>
-                    <h6>Affordable Prices</h6>
-                    <p>Get Factory default price</p>
+                    <h6>Giá cả phải chăng</h6>
+                    <p>Giá cả theo tình trạng</p>
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <img src={service5} alt="services" />
                   <div>
-                    <h6>Secure Payments</h6>
-                    <p>100% Protected</p>
+                    <h6>Thanh toán an toàn</h6>
+                    <p>An Toàn 100%</p>
                   </div>
                 </div>
               </div>
@@ -229,7 +229,7 @@ const Home = () => {
         <div className="home-container-05">
           <div className="home-row-05">
             <div className="home-coloum-05">
-              <h3 className="section-heading">featured Products</h3>
+              <h3 className="section-heading">Sản phẩm nổi bật</h3>
             </div>
             <div className="row-two-09">
               {productState &&
@@ -321,7 +321,7 @@ const Home = () => {
         <div className="home-container-06">
           <div className="home-row-06">
             <div className="home-coloum-06">
-              <h3 className="section-heading">Special Products</h3>
+              <h3 className="section-heading">Sản phẩm đặc biệt</h3>
             </div>
           </div>
           <div className="home-row-07">
@@ -353,7 +353,7 @@ const Home = () => {
         <div className="home-container-08">
           <div className="home-row-08">
             <div className="home-coloum-08">
-              <h3 className="section-heading">Our Popular Products</h3>
+              <h3 className="section-heading">Sản phẩm phổ biến</h3>
             </div>
           </div>
           <div className="row-two-08">
@@ -482,7 +482,7 @@ const Home = () => {
         <div className="home-container-05">
           <div className="home-row-05">
             <div className="home-coloum-05">
-              <h3 className="section-heading">Our Latest Blog</h3>
+              <h3 className="section-heading">Bài viết mới nhất</h3>
             </div>
             <div className="home-row-10">
               {blogState &&

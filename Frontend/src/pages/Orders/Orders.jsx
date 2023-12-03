@@ -15,27 +15,27 @@ const Orders = () => {
   }, []);
   return (
     <>
-      <BreadCrumb title="Orders" />
-      <Meta title="Orders"/>
+      <BreadCrumb title="Đơn hàng" />
+      <Meta title="Đơn hàng"/>
       <div className="order-page home-wrapper-02">
         <div className="order-page-container-1">
           <div className="order-page-row-1">
             <div className="order-page-coloum-1">
               <div className="order-page-row-2">
                 <div className="order-page-coloum-2">
-                  <h4 className="heading">Order Id</h4>
+                  <h4 className="heading">Mã đơn hàng</h4>
                 </div>
                 <div className="order-page-coloum-3">
-                  <h4 className="heading">Total Amount</h4>
+                  <h4 className="heading">Tổng tiền</h4>
                 </div>
                 <div className="order-page-coloum-3">
-                  <h4 className="heading">Total Amount After Discount</h4>
+                  <h4 className="heading">Tổng tiền giảm giá</h4>
                 </div>
                 <div className="order-page-coloum-3">
-                  <h4 className="heading">Status</h4>
+                  <h4 className="heading">Trạng thái</h4>
                 </div>
                 <div className="order-page-coloum-3">
-                  <h4 className="heading">Shipping Info</h4>
+                  <h4 className="heading">Thông tin nhận hàng</h4>
                 </div>
               </div>
               <div className="order-page-coloum-4">

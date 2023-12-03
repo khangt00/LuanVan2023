@@ -25,15 +25,15 @@ const ForgotPassword = () => {
   });
   return (
     <>
-        <Meta title={"Forgot Password"} />
-      <BreadCrumb title="Forgot Password" />
+        <Meta title={"Quên mật khẩu"} />
+      <BreadCrumb title="Quên mật khẩu" />
       <div className="forgot-wrapper home-wrapper-02">
       <div className='forgot-container-01'>
       <div className="forgot-row-01">
           <div className="forgot-coloum-01">
             <div className="auth-card">
-              <h3 className="forgot-h3-01">Reset Your Password</h3>
-              <p className='forgot-p-01'>We will send you an email to reset your password</p>
+              <h3 className="forgot-h3-01">Đặt lại mật khẩu của bạn</h3>
+              <p className='forgot-p-01'>Chúng tôi sẽ gửi email cho bạn đặt lại mật khẩu</p>
               <form
               onSubmit={formik.handleSubmit}
                 action=""
@@ -64,7 +64,7 @@ const ForgotPassword = () => {
                       Submit
                     </button>
                 
-                    <Link className="login-link-01" to="/login">Cancel</Link>
+                    <Link className="login-link-01" to="/login">Hủy</Link>
                   </div>
                 </div>
               </form>

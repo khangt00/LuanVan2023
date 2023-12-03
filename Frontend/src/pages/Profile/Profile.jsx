@@ -63,7 +63,7 @@ const Profile = () => {
           <div className="profile-page-row-1">
           <div className="profile-coloum-2">
             <div className="profile-div-1">
-                <h2>Update Profile</h2>
+                <h2>Cập nhật thông tin</h2>
                 <FiEdit className="edit-b" onClick={()=>setEdit(false)}/>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Profile = () => {
               <form onSubmit={formik.handleSubmit}>
                 <div className="my-form-group">
                   <label htmlFor="example1" className="my-form-label">
-                    First Name
+                    Họ
                   </label>
                   <input
                     type="tect"
@@ -89,7 +89,7 @@ const Profile = () => {
                 </div>
                 <div className="my-form-group">
                   <label htmlFor="example2" className="my-form-label">
-                    Last Name
+                    Tên
                   </label>
                   <input
                     type="tect"
@@ -107,7 +107,7 @@ const Profile = () => {
                 </div>
                 <div className="my-form-group">
                   <label htmlFor="exampleInputEmail1" className="my-form-label">
-                    Email address
+                    Địa chỉ Email
                   </label>
                   <input
                     type="email"
@@ -126,7 +126,7 @@ const Profile = () => {
                 </div>
                 <div className="my-form-group">
                   <label htmlFor="exampleInputEmail2" className="my-form-label">
-                    Mobile Number
+                    Số điện thoại
                   </label>
                   <input
                     type="number"
@@ -145,7 +145,7 @@ const Profile = () => {
                 </div>
                 {
                     edit === false &&  <button type="submit" className="button">
-                  Save
+                  Lưu
                 </button>
                 }
                
