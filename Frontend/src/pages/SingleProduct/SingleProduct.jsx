@@ -47,6 +47,7 @@ const SingleProduct = () => {
   const productState = useSelector((state) => state?.product?.singleproduct);
   const productsState = useSelector((state) => state?.product?.product);
   const cartState = useSelector((state) => state?.auth?.cartProducts);
+  const [selectedImgUrl, setSelectedImgUrl] = useState(null)
   useEffect(() => {
     dispatch(getAProduct(getProductId));
     dispatch(getUserCart());
@@ -59,6 +60,10 @@ const SingleProduct = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    setSelectedImgUrl(productState?.images[0]?.url ?? null)
+  }, [productState])
 
   const uploadCart = () => {
    if (color === null) {
@@ -138,22 +143,27 @@ const SingleProduct = () => {
             <div className="main-product-coloum-01">
               <div className="main-product-image">
                 <div>
-                    {isVideo(productState?.images[0]?.url) ? (
+                    {isVideo(selectedImgUrl) ? (
                       <video className="video" controls>
                         <source
-                          src={productState?.images[0]?.url}
+                          src={selectedImgUrl}
                           type="video/mp4"
                         />
                       </video>
                     ) : (
-                      <ReactImageZoom {...props} />
+                      <ReactImageZoom
+                        width={350}
+                        height={500}
+                        zoomWidth={600}
+                        img={selectedImgUrl ?? watchtwo}
+                      />
                     )}
                 </div>
               </div>
               <div className="other-product-images">
                 {productState?.images.map((item, index) => {
                   return (
-                    <div key={index}>
+                    <div key={index} onClick={() => setSelectedImgUrl(item?.url ?? null)}>
                       {isVideo(item?.url) ? (
                         <video width={250} height={250}>
                           <source
