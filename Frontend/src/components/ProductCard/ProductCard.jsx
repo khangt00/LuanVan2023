@@ -11,6 +11,13 @@ import {addToWishlist} from "../../features/product/productSlice"
 
 
 const ProductCard = (props) => {
+  const isVideo = (url) => {
+    if (url) {
+      console.log("url: ", url);
+      console.log(url.endsWith(".mp4"));
+      return url.endsWith(".mp4");
+    }
+  };
   const { grid , data } = props;
   let location = useLocation();
   const dispatch = useDispatch();
@@ -41,7 +48,17 @@ const ProductCard = (props) => {
             </button>
           </div>
           <div className="product-image">
-            <img className="img-01" src={item?.images[0]?.url} alt="product" />
+            {isVideo(item?.images[0]?.url) ? 
+              <video className="img-01">
+                <source
+                  src={item?.images[0]?.url}
+                  type="video/mp4"
+                />
+              </video>
+            :
+              <img className="img-01" src={item?.images[0]?.url} alt="product" />
+
+            }
           </div>
           <div className="product-details">
             <h6 className="brand">{item?.brand}</h6>
