@@ -17,8 +17,10 @@ const createProduct = async (product) => {
 
   return response.data;
 };
-const updateProduct = async (id) => {
-    const response = await axios.put(`${base_url}product/${id}`, config);
+const updateProduct = async (id, product) => {
+  console.log("id: ", id);
+  console.log("product: ", product);
+  const response = await axios.put(`${base_url}product/${id}`, product, config);
   return response.data;
 };
 const deleteProduct = async (id) => {

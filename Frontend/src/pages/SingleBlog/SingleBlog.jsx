@@ -35,7 +35,7 @@ const SingleBlog = () => {
                 <img
                   className="single-blog-img"
                   src={
-                    blogState?.images[0].url ? blogState?.images[0].url : blog1
+                    blogState?.images[0]?.url ? blogState?.images[0].url : blog1
                   }
                   alt="blog"
                 />

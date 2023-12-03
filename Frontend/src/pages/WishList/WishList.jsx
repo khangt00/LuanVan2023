@@ -55,7 +55,7 @@ const WishList = () => {
                     />
                     <div className="wishlist-card-image">
                       <img
-                        src={item?.images[0].url ? item?.images[0].url : watch}
+                        src={item?.images[0]?.url ? item?.images[0].url : watch}
                         style={{
                           maxWidth: "100%",
                           height: "auto",

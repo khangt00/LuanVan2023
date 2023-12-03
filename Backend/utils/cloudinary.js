@@ -6,17 +6,36 @@ cloudinary.config({
     api_secret: process.env.API_SECRET_KEY,
 })
 
-const cloudinaryUploadImg = async(fileToUploads) =>{
+const cloudinaryUploadFile = async(fileToUploads, type) =>{
+    try {
+    const result = await cloudinary.v2.uploader.upload(fileToUploads, {
+      resource_type: type,
+    });
+
+    // The 'result' object contains information about the uploaded file
+    return {
+            url : result.secure_url,
+            asset_id : result.asset_id,
+            public_id : result.public_id,
+        }
+  } catch (error) {
+    console.error('Error uploading file:', error);
+  }
+};
+
+const cloudinaryUploadVideo = async(fileToUploads) =>{
     return new Promise((resolve)=>{
         cloudinary.uploader.upload(fileToUploads,(result)=>{
+            console.log("fileToUploads: ", fileToUploads)
+            console.log("result: ", result)
             resolve(
                 {
-                url : result.secure_url,
-                asset_id : result.asset_id,
-                public_id : result.public_id,
+                    url : result.secure_url,
+                    asset_id : result.asset_id,
+                    public_id : result.public_id,
                 },
                 {  
-                resource_type : "auto"
+                    resource_type : "video"
                 }
             )
         })
@@ -40,4 +59,4 @@ const cloudinaryDeleteImg = async(fileToDelete) =>{
     })
 };
 
-module.exports = {cloudinaryUploadImg,cloudinaryDeleteImg};
+module.exports = {cloudinaryUploadFile, cloudinaryUploadVideo, cloudinaryDeleteImg};

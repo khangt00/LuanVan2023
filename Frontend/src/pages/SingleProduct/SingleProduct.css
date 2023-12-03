@@ -367,6 +367,11 @@
 .addedmarginfive{
   margin-left: 1rem;
 }
+
+.video {
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 600px) {
   .main-product-container-01 {
     width: 194%;

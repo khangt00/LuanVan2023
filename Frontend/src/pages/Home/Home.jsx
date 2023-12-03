@@ -83,6 +83,15 @@ const Home = () => {
   const getProducts = () => {
     dispatch(getAllProducts());
   };
+
+  const isVideo = (url) => {
+    if (url) {
+      console.log("url: ", url);
+      console.log(url.endsWith(".mp4"));
+      return url.endsWith(".mp4");
+    }
+  };
+
   return (
     <>
       <Meta title={"HOC"} />
@@ -243,11 +252,20 @@ const Home = () => {
                             </button>
                           </div>
                           <div className="product-image">
+                            {isVideo(item?.images[0]?.url) ? (
+                              <video width={300} height={250}>
+                                <source
+                                  src={item?.images[0]?.url}
+                                  type="video/mp4"
+                                />
+                              </video>
+                            ) : (
                             <img
                               className="img-01"
                               src={item?.images[0]?.url}
                               alt="product"
                             />
+                            )}
                           </div>
                           <div className="product-details">
                             <h6 className="brand">{item?.brand}</h6>
@@ -358,13 +376,23 @@ const Home = () => {
                             <img src={wish} alt="wishlist" />
                           </button>
                         </div>
-                        <div className="product-image">
-                          <img
-                            className="img-01"
-                            src={item?.images[0].url}
-                            alt="product"
-                          />
-                        </div>
+                        {isVideo(item?.images[0]?.url) ? (
+                          <video width={300} height={250}>
+                            <source
+                              src={item?.images[0]?.url}
+                              type="video/mp4"
+                            />
+                          </video>
+                        ) : (
+                          <div className="product-image">
+                            <img
+                              className="img-01"
+                              src={item?.images[0]?.url}
+                              alt="product"
+                            />
+                          </div>
+                        )}
+
                         <div className="product-details">
                           <h6 className="brand">{item?.brand}</h6>
                           <h5 className="product-title">{item.title}</h5>

@@ -16,7 +16,13 @@ const Cart = () => {
   const location = useLocation();
   const selectedSize = location.state?.selectedSize;
 
-
+  const isVideo = (url) => {
+    if (url) {
+      console.log("url: ", url);
+      console.log(url.endsWith(".mp4"));
+      return url.endsWith(".mp4");
+    }
+  };
   const getTokenFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
   : null;
@@ -90,11 +96,27 @@ const Cart = () => {
                     <div className="cart-data" key={index}>
                       <div className="cart-coloum-01">
                         <div className="cart-div-02">
-                          <img
+                          {isVideo(item?.productId?.images[0]?.url) ? (
+                            <video className="cart-img-01">
+                              <source
+                                src={item?.productId?.images[0]?.url}
+                                type="video/mp4"
+                              />
+                            </video>
+                          ) : (
+                            <div className="product-image">
+                              <img
+                                className="cart-img-01"
+                                src={item?.productId?.images[0]?.url ? item?.productId?.images[0]?.url : "/images/watch.jpg"}
+                                alt="product"
+                              />
+                            </div>
+                          )}
+                          {/* <img
                             className="cart-img-01"
                             src={item?.productId?.images[0]?.url ? item?.productId?.images[0]?.url : "/images/watch.jpg"}
                             alt="watch"
-                          />
+                          /> */}
                         </div>
                         <div className="cart-div-03">
                           <p style={{ marginBottom: "20px" }}>

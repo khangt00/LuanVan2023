@@ -4,7 +4,6 @@ const asyncHandler = require("express-async-handler");
 const slugify = require("slugify");
 const validateMongoDbId = require("../utils/validateMongodbid");
 
-
 /* create product */
 const createProduct = asyncHandler(async (req, res) => {
   try {
@@ -22,14 +21,21 @@ const createProduct = asyncHandler(async (req, res) => {
 
 const updateProduct = asyncHandler(async (req, res) => {
   const { id } = req.params;
+  console.log("id: ", id);
+  console.log("body: ", req.body);
   validateMongoDbId(id);
   try {
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
-    const updateProduct = await Product.findOneAndUpdate(id, req.body, {
-      new: true,
-    });
+    const updateProduct = await Product.findOneAndUpdate(
+      { _id: id },
+      req.body,
+      {
+        new: false,
+      }
+    );
+    console.log("result: ", updateProduct);
     res.json(updateProduct);
   } catch (error) {
     throw new Error(error);
@@ -55,7 +61,10 @@ const getaProduct = asyncHandler(async (req, res) => {
   validateMongoDbId(id);
 
   try {
-    const findProduct = await Product.findById(id).populate("color").populate("size");
+    const findProduct = await Product.findById(id)
+      .populate("color")
+      .populate("size")
+      .populate('ratings.postedby');
     res.json(findProduct);
   } catch (error) {
     throw new Error(error);
@@ -68,10 +77,8 @@ const getAllProduct = asyncHandler(async (req, res) => {
   try {
     /* this is for filtering */
     const queryObj = { ...req.query };
-    const excludeFeilds = ["page", "sort", "limit", "feilds","color"];
+    const excludeFeilds = ["page", "sort", "limit", "feilds", "color"];
     excludeFeilds.forEach((el) => delete queryObj[el]);
-
-   
 
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
@@ -82,7 +89,6 @@ const getAllProduct = asyncHandler(async (req, res) => {
       const colors = req.query.color.split(","); // Assuming multiple colors can be selected
       query = query.where("color").in(colors);
     }
-
 
     /* now sorting */
 
@@ -102,8 +108,8 @@ const getAllProduct = asyncHandler(async (req, res) => {
       query = query.select("-__v");
     }
 
-    const page = req.query.page;
-    const limit = req.query.limit;
+    const page = req.query.page ?? 1;
+    const limit = req.query.limit ?? 10;
     const skip = (page - 1) * limit;
     query = query.skip(skip).limit(limit);
     if (req.query.page) {
@@ -150,8 +156,7 @@ const addToWishlist = asyncHandler(async (req, res) => {
       );
       res.json(user);
     }
-  } 
-  catch (error) {
+  } catch (error) {
     throw new Error(error);
   }
 });
@@ -160,7 +165,7 @@ const addToWishlist = asyncHandler(async (req, res) => {
 
 const rating = asyncHandler(async (req, res) => {
   const { _id } = req.user;
-  const { star, prodId , comment } = req.body;
+  const { star, prodId, comment } = req.body;
   try {
     const product = await Product.findById(prodId);
     let alreadyRated = product.ratings.find(
@@ -172,7 +177,7 @@ const rating = asyncHandler(async (req, res) => {
           ratings: { $elemMatch: alreadyRated },
         },
         {
-          $set: { "ratings.$.star": star ,  "ratings.$.comment": comment },
+          $set: { "ratings.$.star": star, "ratings.$.comment": comment },
         },
         {
           new: true,
@@ -185,7 +190,7 @@ const rating = asyncHandler(async (req, res) => {
           $push: {
             ratings: {
               star: star,
-              comment : comment,
+              comment: comment,
               postedby: _id,
             },
           },
@@ -200,7 +205,7 @@ const rating = asyncHandler(async (req, res) => {
     let totalRating = getallratings.ratings.length;
     let ratingsum = getallratings.ratings
       .map((item) => item.star)
-      .reduce((prev, curr) => prev+curr, 0);
+      .reduce((prev, curr) => prev + curr, 0);
     let actualRating = Math.round(ratingsum / totalRating);
     let finalproduct = await Product.findByIdAndUpdate(
       prodId,
@@ -211,13 +216,11 @@ const rating = asyncHandler(async (req, res) => {
         new: true,
       }
     );
-    res.json(finalproduct)
+    res.json(finalproduct);
   } catch (error) {
     throw new Error(error);
   }
 });
-
-
 
 module.exports = {
   createProduct,

@@ -10,7 +10,7 @@ const multerStorage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-        cb(null, file.fieldname + "-" + uniqueSuffix + ".jpeg")
+        cb(null, file.fieldname + "-" + uniqueSuffix + '.mp4')
     },
 });
 console.log(__dirname);
@@ -27,7 +27,7 @@ const multerFilter = (req, file, cb) => {
 
 const uploadPhoto = multer({
     storage: multerStorage,
-    fileFilter: multerFilter,
+    // fileFilter: multerFilter,
     limits: { feildSize: 2000000 }
 });
 
