@@ -29,6 +29,16 @@ const SingleProduct = () => {
 
   const [alreadyAdded, setAlreadyAdded] = useState(false);
   const [popularProduct, setPopularProduct] = useState([]);
+  const authState = useSelector((state) => state?.auth);
+
+
+  const isVideo = (url) => {
+  if (url) {
+    console.log("url: ", url);
+    console.log(url.endsWith(".mp4"));
+    return url.endsWith(".mp4");
+  }
+};
 
   const location = useLocation();
   const getProductId = location.pathname.split("/")[2];
@@ -128,20 +138,39 @@ const SingleProduct = () => {
             <div className="main-product-coloum-01">
               <div className="main-product-image">
                 <div>
-                  <ReactImageZoom {...props} />
+                    {isVideo(productState?.images[0]?.url) ? (
+                      <video className="video" controls>
+                        <source
+                          src={productState?.images[0]?.url}
+                          type="video/mp4"
+                        />
+                      </video>
+                    ) : (
+                      <ReactImageZoom {...props} />
+                    )}
                 </div>
               </div>
               <div className="other-product-images">
                 {productState?.images.map((item, index) => {
                   return (
                     <div key={index}>
+                      {isVideo(item?.url) ? (
+                        <video width={250} height={250}>
+                          <source
+                            src={item?.url}
+                            type="video/mp4"
+                          />
+                        </video>
+                      ) : (
                       <img
                         style={{ maxWidth: "100%", height: "auto" }}
                         src={item?.url}
                         alt="watch"
                       />
+                      )}
                     </div>
                   );
+                  
                 })}
               </div>
             </div>
@@ -368,7 +397,7 @@ const SingleProduct = () => {
                         return (
                           <>
                             <div key={index} className="review-div-03">
-                              <h4 style={{ marginTop: "2.3px" }}>Abuzar</h4>
+                              <h4 style={{ marginTop: "2.3px" }}>{item?.postedby?.firstname ? `${item?.postedby?.firstname} ${item?.postedby?.lastname}` : "Anonymous" }</h4>
                               <ReactStars
                                 count={5}
                                 size={24}

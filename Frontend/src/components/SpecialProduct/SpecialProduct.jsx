@@ -4,13 +4,27 @@ import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 const SpecialProduct = (props) => {
   const { title, brand, price, totalrating, sold, quantity , images , id } = props;
+  const isVideo = (url) => {
+    if (url) {
+      console.log("url: ", url);
+      console.log(url.endsWith(".mp4"));
+      return url.endsWith(".mp4");
+    }
+  };
   return (
     <>
       <div className="special-coloum-01">
         <div className="special-product-card">
           <div className="div-01">
             <div>
-              <img className="img-01" src={images} alt="watch" />
+              {isVideo(images) ? 
+                <video width={300} height={250}>
+                  <source
+                    src={images}
+                    type="video/mp4"
+                  />
+                </video> : <img className="img-01" src={images} alt="watch" />
+              }
             </div>
             <div className="special-product-content">
               <h5 className="brand">{brand}</h5>

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk,createAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import productService from "./productService";
 
 export const getProducts = createAsyncThunk(
@@ -34,9 +34,12 @@ export const deleteAProduct = createAsyncThunk(
 
 export const updateAProduct = createAsyncThunk(
   "product/update-product",
-  async (id, thunkAPI) => {
+  async (data, thunkAPI) => {
+    const { id, product } = data;
+    console.log("hell id is object?: ", id);
+    console.log("hell product is object?: ", product);
     try {
-      return await productService.updateProduct(id);
+      return await productService.updateProduct(id, product);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -44,7 +47,7 @@ export const updateAProduct = createAsyncThunk(
 );
 
 export const getSingleProduct = createAsyncThunk(
-  "size/get-size",
+  "product/single-product",
   async (id, thunkAPI) => {
     try {
       return await productService.getAProduct(id);
@@ -60,6 +63,7 @@ const initialState = {
   isError: false,
   isLoading: false,
   isSuccess: false,
+  productDetail: null,
   message: "",
 };
 export const productSlice = createSlice({
@@ -120,7 +124,7 @@ export const productSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
-        state.updatedSize = action.payload;
+        state.updatedProduct = action.payload;
       })
       .addCase(updateAProduct.rejected, (state, action) => {
         state.isLoading = false;
@@ -132,10 +136,11 @@ export const productSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getSingleProduct.fulfilled, (state, action) => {
+        console.log("detail: ", action.payload);
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
-        state.getsProd = action.payload;
+        state.productDetail = action.payload;
       })
       .addCase(getSingleProduct.rejected, (state, action) => {
         state.isLoading = false;
