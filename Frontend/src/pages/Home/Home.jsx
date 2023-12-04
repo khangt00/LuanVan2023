@@ -1,35 +1,20 @@
 import React, { useEffect } from "react";
 import "./Home.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../../components/BlogCard/BlogCard";
-import ProductCard from "../../components/ProductCard/ProductCard";
 import SpecialProduct from "../../components/SpecialProduct/SpecialProduct";
-import mainBanner from "../../images/main-banner-1.jpg";
-import catBanner1 from "../../images/catbanner-01.jpg";
-import catBanner2 from "../../images/catbanner-02.jpg";
-import catBanner3 from "../../images/catbanner-03.jpg";
-import catBanner4 from "../../images/catbanner-04.jpg";
 import service1 from "../../images/service.png";
 import service2 from "../../images/service-02.png";
 import service3 from "../../images/service-03.png";
 import service4 from "../../images/service-04.png";
 import service5 from "../../images/service-05.png";
-import camera from "../../images/camera.jpg";
-import tv from "../../images/tv.jpg";
-import headphone from "../../images/headphone.jpg";
-import famous1 from "../../images/famous-1.webp";
-import famous2 from "../../images/famous-2.webp";
-import famous3 from "../../images/famous-3.webp";
-import famous4 from "../../images/famous-4.webp";
-import brand1 from "../../images/brand-01.png";
-import brand2 from "../../images/brand-02.png";
-import brand3 from "../../images/brand-03.png";
-import brand4 from "../../images/brand-04.png";
-import brand5 from "../../images/brand-05.png";
-import brand6 from "../../images/brand-06.png";
-import brand7 from "../../images/brand-07.png";
-import brand8 from "../../images/brand-08.png";
+import logo1 from "../../images/logo1.png";
+import logo2 from "../../images/logo2.png";
+import logo3 from "../../images/logo3.png";
+import logo4 from "../../images/logo4.png";
+import logo5 from "../../images/logo5.png";
+import logo6 from "../../images/logo6.png";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBlogs } from "../../features/blogs/blogSlice";
@@ -446,29 +431,29 @@ const Home = () => {
               <div className="marque-inner-wrapper card-wrapper">
                 <Marquee style={{ display: "flex" }}>
                   <div className="marque-brand-img">
-                    <img src={brand1} alt="brand" />
+                    <img src={logo1} alt="brand" />
                   </div>
                   <div className="marque-brand-img">
-                    <img src={brand2} alt="brand" />
+                    <img src={logo2} alt="brand" />
                   </div>
                   <div className="marque-brand-img">
-                    <img src={brand3} alt="brand" />
+                    <img src={logo3} alt="brand" />
                   </div>
                   <div className="marque-brand-img">
-                    <img src={brand4} alt="brand" />
+                    <img src={logo4} alt="brand" />
                   </div>
                   <div className="marque-brand-img">
-                    <img src={brand5} alt="brand" />
+                    <img src={logo5} alt="brand" />
                   </div>
                   <div className="marque-brand-img">
-                    <img src={brand6} alt="brand" />
+                    <img src={logo6} alt="brand" />
                   </div>
-                  <div className="marque-brand-img">
+                  {/* <div className="marque-brand-img">
                     <img src={brand7} alt="brand" />
                   </div>
                   <div className="marque-brand-img">
                     <img src={brand8} alt="brand" />
-                  </div>
+                  </div> */}
                 </Marquee>
               </div>
             </div>

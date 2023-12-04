@@ -8,15 +8,13 @@ import { BsCart4 } from "react-icons/bs";
 import { AiOutlineCloudUpload, AiOutlineUser } from "react-icons/ai";
 import { MdCategory } from "react-icons/md";
 import { VscSymbolColor } from "react-icons/vsc";
-import { IoIosNotifications } from "react-icons/io";
+import { RiWaterPercentLine } from "react-icons/ri";
 import { SiBrandfolder, SiBloglovin } from "react-icons/si";
 import { FaClipboardList, FaListUl } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 import { Outlet } from "react-router-dom";
 import { Layout, Menu, Button, theme } from "antd";
 import { useNavigate } from "react-router-dom";
-import {RiCouponLine} from "react-icons/ri"
-import {SiZend} from "react-icons/si"
 import {CiLogout} from "react-icons/ci"
 import {useSelector} from "react-redux"
 const { Header, Sider, Content } = Layout;
@@ -110,12 +108,12 @@ const Mainlayout = () => {
             },
             {
               key: "size",
-              icon: <SiZend style={{ fontSize: "1.2rem" }} />,
+              icon: <RiWaterPercentLine  style={{ fontSize: "1.2rem" }} />,
               label: "Tình trạng",
               children: [
                 {
                   key: "addsize",
-                  icon: <RiCouponLine style={{ fontSize: "1.2rem" }} />,
+                  icon: <RiWaterPercentLine  style={{ fontSize: "1.2rem" }} />,
                   label: "Thêm tình trạng",
                 },
                 {

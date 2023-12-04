@@ -36,7 +36,7 @@ export const contactSlice = createSlice({
         state.isSuccess = true;
         state.contact = action.payload;
         if(state.isSuccess === true){
-          toast.success("Contact Form Submitted Successfully")
+          toast.success("Biểu mẫu liên hệ đã được gửi thành công")
         }
       })
       .addCase(createQuery.rejected, (state, action) => {
@@ -45,7 +45,7 @@ export const contactSlice = createSlice({
         state.isSuccess = false;
         state.message = action.error;
         if(state.isSuccess === true){
-          toast.error("Something Went Wrong")
+          toast.error("Đã xảy ra lỗi")
         }
       })
       

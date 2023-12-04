@@ -99,7 +99,7 @@ export const productSlice = createSlice({
         state.isError = false;
         state.isSuccess = true;
         state.singleproduct = action.payload;
-        state.message = "Product Fetched Successfully";
+        state.message = "Đã lấy sản phẩm thành công";
       })
       .addCase(getAProduct.rejected, (state, action) => {
         state.isLoading = false;
@@ -115,9 +115,9 @@ export const productSlice = createSlice({
         state.isError = false;
         state.isSuccess = true;
         state.rating = action.payload;
-        state.message = "Rating added Successfully";
+        state.message = "Đã thêm sao thành công";
         if(state.isSuccess){
-          toast.success("Review added Successfully")
+          toast.success("Đã thêm đánh giá thành công")
         }
       })
       .addCase(addRating.rejected, (state, action) => {
