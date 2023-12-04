@@ -409,7 +409,7 @@ const Home = () => {
                               __html: item?.description,
                             }}
                           ></p>
-                          <p className="price">$ {item?.price}</p>
+                          <p className="price">VND {item?.price}</p>
                         </div>
                         <div
                           style={{ position: "absolute" }}

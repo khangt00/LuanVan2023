@@ -11,31 +11,31 @@ const columns = [
       dataIndex: "key",
     },
     {
-      title: "Product Name",
+      title: "Tên sản phẩm",
       dataIndex: "name",
     },
     {
-      title: "Brand",
+      title: "Thương hiệu",
       dataIndex: "brand",
     },
     {
-      title: "Count",
+      title: "Số lượng",
       dataIndex: "count",
     },
     {
-      title: "Payment Method",
+      title: "Phương thức thanh toán",
       dataIndex: "payment",
     },
     {
-      title: "Shipping Info",
+      title: "Thông tin giao hàng",
       dataIndex: "shippingInfo",
     },
     {
-      title: "Color",
+      title: "Màu",
       dataIndex: "color",
     },
     {
-      title: "Amount",
+      title: "Giá tiền",
       dataIndex: "amount",
     },
   ];
@@ -64,7 +64,7 @@ const ViewOrder = () => {
   }
   return (
     <div>
-      <h3 className="O-list-h3">View Orders</h3>
+      <h3 className="O-list-h3">Xem đơn hàng</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>

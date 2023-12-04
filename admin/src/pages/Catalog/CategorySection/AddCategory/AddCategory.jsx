@@ -14,7 +14,7 @@ import {
 } from "../../../../features/pcategory/pcategorySlice";
 
 let schema = Yup.object().shape({
-  title: Yup.string().required("Category is Required"),
+  title: Yup.string().required("Tên danh mục không được trống"),
 });
 
 const AddCategory = () => {
@@ -42,14 +42,14 @@ const AddCategory = () => {
 
   useEffect(() => {
     if (isSuccess && createdCategory) {
-      toast.success("Category Added Successfullly!");
+      toast.success("Danh mục thêm thành công!");
     }
     if (isSuccess && updatedCategory) {
-      toast.success("Category Updated Successfullly!");
+      toast.success("Danh mục cập nhật thành công!");
       navigate("/admin/category-list");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("Đã xảy ra lỗi!");
     }
   }, [isSuccess, isError, isLoading]);
 
@@ -77,7 +77,7 @@ const AddCategory = () => {
   return (
     <div>
       <h3 className="adc1-h3">
-        {getPCatId !== undefined ? "Edit" : "Add"} Category
+        {getPCatId !== undefined ? "Sửa" : "Thêm"} Danh mục
       </h3>
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
@@ -88,14 +88,14 @@ const AddCategory = () => {
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
             val={formik.values.title}
-            label="Enter Category"
+            label="Thêm danh mục sản phẩm"
             id="category"
           />
           <div className="error">
             {formik.touched.title && formik.errors.title}
           </div>
           <button className="adc1-btn" type="Submit">
-            {getPCatId !== undefined ? "Edit" : "Add"} Category
+            {getPCatId !== undefined ? "Sửa" : "Thêm"} Danh mục
           </button>
         </form>
       </div>

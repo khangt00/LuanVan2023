@@ -32,8 +32,8 @@ const Contact = () => {
   });
   return (
     <>
-      <Meta title={"Contact Us"} />
-      <BreadCrumb title="Contact Us" />
+      <Meta title={"Liên hệ"} />
+      <BreadCrumb title="Liên hệ" />
       <div className="contact-wrapper home-wrapper-02">
         <div className="contact-container-01">
           <div className="contact-row-01">

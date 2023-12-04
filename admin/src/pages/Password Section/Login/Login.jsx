@@ -12,9 +12,9 @@ import { login } from "../../../features/auth/authSlice";
 
 let schema = Yup.object().shape({
   email: Yup.string()
-    .email("Email Should Be Valid")
-    .required("Email is Required"),
-  password: Yup.string().required("Password is Required"),
+    .email("Email không đúng định dạng")
+    .required("Email không được trống"),
+  password: Yup.string().required("Mật khẩu không được trống"),
 });
 
 
@@ -53,16 +53,16 @@ const Login = () => {
       <br />
       <br />
       <div className="adminlogin-div-2">
-        <h3 className="adminlogin-h3">Login</h3>
-        <p className="adminlogin-p">Login to your account to continue.</p>
+        <h3 className="adminlogin-h3">Đăng nhập</h3>
+        <p className="adminlogin-p">Đăng nhập tài khoản của bạn để tiếp tục.</p>
         <div className="error" style={{ textAlign: "center" }}>
-          {message.message == "Rejected" ? "You are not an Admin" : ""}
+          {message.message == "Rejected" ? "Bạn không phải admin" : ""}
         </div>
         <form action="" onSubmit={formik.handleSubmit}>
           <CustomInput
             type="text"
             name="email"
-            label="Email Address"
+            label="Email"
             id="email"
             val={formik.values.email}
             onChng={formik.handleChange("email")}
@@ -73,7 +73,7 @@ const Login = () => {
           <CustomInput
             type="password"
             name="password"
-            label="Password"
+            label="Mật khẩu"
             id="pass"
             val={formik.values.password}
             onChng={formik.handleChange("password")}
@@ -82,7 +82,7 @@ const Login = () => {
             {formik.touched.password && formik.errors.password}
           </div>
           <button className="adminlogin-button-1" type="Submit">
-            Login
+            Đăng nhập
           </button>
         </form>
       </div>

@@ -18,11 +18,11 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Tình trạng",
     dataIndex: "name",
   },
   {
-    title: "Action",
+    title: "Hành động",
     dataIndex: "action",
   },
 ];
@@ -76,7 +76,7 @@ const ListSize = () => {
 
   return (
     <div>
-      <h3 className="Size-list-h3">Size List</h3>
+      <h3 className="Size-list-h3">Danh sách tình trạng</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -86,7 +86,7 @@ const ListSize = () => {
         performAction={() => {
           deleteSize(sizeId);
         }}
-        title="Are you sure you want to delete this size?"
+        title="Bạn có chắc xóa tình trạng này không?"
       />
     </div>
   );

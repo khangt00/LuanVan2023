@@ -13,24 +13,24 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Tên",
     dataIndex: "name",
   },
   {
-    title: "Product",
+    title: "Sản phẩm",
     dataIndex: "product",
   },
   {
-    title: "Amount",
+    title: "Giá tiền",
     dataIndex: "amount",
   },
   {
-    title: "Date",
+    title: "Ngày mua",
     dataIndex: "date",
   },
 
   {
-    title: "Action",
+    title: "Hành động",
     dataIndex: "action",
   },
 ];
@@ -48,7 +48,7 @@ const Orders = () => {
       key: i + 1,
       name: orderState[i]?.user?.firstname,
       product: (
-        <Link to={`/admin/order/${orderState[i]?._id}`}>View Orders</Link>
+        <Link to={`/admin/order/${orderState[i]?._id}`}>Xem đơn hàng</Link>
       ),
       amount: orderState[i].totalPrice,
       date: new Date(orderState[i]?.createdAt).toLocaleString(),
@@ -63,13 +63,13 @@ const Orders = () => {
             id=""
             defaultValue={orderState[i]?.orderStatus}
           >
-            <option value="Ordered" disabled selected>
-              Ordered
+            <option value="Đã đặt hàng" disabled selected>
+              Đã đặt hàng
             </option>
-            <option value="Shipped">Shipped</option>
-            <option value="Processed">Processed</option>
-            <option value="Out For Delivery">Out For Delivery</option>
-            <option value="Delivered"> Delivered</option>
+            <option value="Đã vận chuyển">Đã vận chuyển</option>
+            <option value="Đang xử lý">Đang xử lý</option>
+            <option value="Giao hàng">Giao hàng</option>
+            <option value="Đã giao hàng">Đã giao hàng</option>
           </select>
         </>
       ),
@@ -82,7 +82,7 @@ const Orders = () => {
 
   return (
     <div>
-      <h3 className="O-list-h3">Orders</h3>
+      <h3 className="O-list-h3">Đơn hàng</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>

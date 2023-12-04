@@ -14,35 +14,35 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Title",
+    title: "Tiêu đề",
     dataIndex: "title",
     sorter: (a, b) => a.title?.length - b.title?.length,
   },
   {
-    title: "Brand",
+    title: "Thương hiệu",
     dataIndex: "brand",
     sorter: (a, b) => a.brand?.length - b.brand?.length,
   },
   {
-    title: "Category",
+    title: "Danh mục",
     dataIndex: "category",
     sorter: (a, b) => a.category?.length - b.category?.length,
   },
   {
-    title: "Color",
+    title: "Màu",
     dataIndex: "color",
   },
   {
-    title: "Size",
+    title: "Tình trạng",
     dataIndex: "size",
   },
   {
-    title: "Price",
+    title: "Giá tiền",
     dataIndex: "price",
     sorter: (a, b) => a.price - b.price,
   },
   {
-    title: "Action",
+    title: "Hành động",
     dataIndex: "action",
   },
 ];
@@ -99,7 +99,7 @@ const ProductList = () => {
   };
   return (
     <div>
-      <h3 className="Productlist-list-h3">Product List</h3>
+      <h3 className="Productlist-list-h3">Danh sách sản phẩm</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>

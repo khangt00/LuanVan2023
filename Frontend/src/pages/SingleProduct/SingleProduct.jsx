@@ -15,7 +15,7 @@ import {
   getAProduct,
   getAllProducts,
 } from "../../features/product/productSlice";
-import watchtwo from "../../images/ano.jpg";
+import khang from "../../images/khang.jpg";
 import { toast } from "react-toastify";
 import { addProdToCart, getUserCart } from "../../features/user/userSlice";
 import Size from "../../components/Size/Size";
@@ -67,7 +67,7 @@ const SingleProduct = () => {
 
   const uploadCart = () => {
    if (color === null) {
-      toast.error("Please Choose Color");
+      toast.error("Vui lòng chọn màu");
       return false;
     } else {
       dispatch(
@@ -89,7 +89,7 @@ const SingleProduct = () => {
     width: 350,
     height: 500,
     zoomWidth: 600,
-    img: productState?.images[0]?.url ? productState?.images[0]?.url : watchtwo,
+    img: productState?.images[0]?.url ? productState?.images[0]?.url : khang,
   };
   const [orderedProduct, setorderedProduct] = useState(true);
   const copyToClipboard = (text) => {
@@ -113,10 +113,10 @@ const SingleProduct = () => {
 
   const addRatingToProduct = () => {
     if (star === null) {
-      toast.error("Please add star Rating");
+      toast.error("Vui lòng thêm sao đánh giá");
       return false;
     } else if (comment === null) {
-      toast.error("Please write Review");
+      toast.error("Vui lòng viết đánh giá");
       return false;
     } else {
       dispatch(
@@ -155,7 +155,7 @@ const SingleProduct = () => {
                         width={350}
                         height={500}
                         zoomWidth={600}
-                        img={selectedImgUrl ?? watchtwo}
+                        img={selectedImgUrl ?? khang}
                       />
                     )}
                 </div>

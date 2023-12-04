@@ -14,7 +14,7 @@ import {
 } from "../../../../features/brand/brandSlice";
 
 let schema = Yup.object().shape({
-  title: Yup.string().required("Brand name is Required"),
+  title: Yup.string().required("Tên thương hiệu không được trống"),
 });
 
 const AddBrand = () => {
@@ -43,14 +43,14 @@ const AddBrand = () => {
 
   useEffect(() => {
     if (isSuccess && createdBrand) {
-      toast.success("Brand Added Successfullly!");
+      toast.success("Thương hiệu thêm thành công!");
     }
     if (isSuccess && updatedBrand) {
-      toast.success("Brand Updated Successfullly!");
+      toast.success("Thương hiệu cập nhật thành công!");
       navigate("/admin/list-brand");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("Đã xảy ra lỗi!");
     }
   }, [isSuccess, isError, isLoading]);
 
@@ -77,7 +77,7 @@ const AddBrand = () => {
   return (
     <div>
       <h3 className="adb1-h3">
-        {getBrandId !== undefined ? "Edit" : "Add"} Brand
+        {getBrandId !== undefined ? "Sửa" : "Thêm"} Thương hiệu
       </h3>
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
@@ -88,14 +88,14 @@ const AddBrand = () => {
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
             val={formik.values.title}
-            label="Enter Brand"
+            label="Thêm tên thương hiệu"
             id="brand"
           />
           <div className="error">
             {formik.touched.title && formik.errors.title}
           </div>
           <button className="adb1-btn" type="Submit">
-            {getBrandId !== undefined ? "Edit" : "Add"} Brand
+            {getBrandId !== undefined ? "Sửa" : "Thêm"} Thương hiệu
           </button>
         </form>
       </div>

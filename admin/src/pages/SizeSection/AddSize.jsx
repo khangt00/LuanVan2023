@@ -14,7 +14,7 @@ import {
 } from "../../features/size/sizeSlice";
 
 let schema = Yup.object().shape({
-  title: Yup.string().required("Size is Required"),
+  title: Yup.string().required("Tình trạng không được trống"),
 });
 const AddSize = () => {
   const dispatch = useDispatch();
@@ -42,14 +42,14 @@ const AddSize = () => {
 
   useEffect(() => {
     if (isSuccess && createdSize) {
-      toast.success("Size Added Successfullly!");
+      toast.success("Tình trạng thêm thành công!");
     }
     if (isSuccess && updatedSize) {
-      toast.success("Size Updated Successfullly!");
+      toast.success("Tình trạng được cập nhật thành công!");
       navigate("/admin/size-list");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("Đã xảy ra lỗi!");
     }
   }, [isSuccess, isError, isLoading]);
 
@@ -77,14 +77,14 @@ const AddSize = () => {
   return (
     <div>
       <h3 className="adc-h3">
-        {getSizeId !== undefined ? "Edit" : "Add"} Size
+        {getSizeId !== undefined ? "Sửa" : "Thêm"} Tình trạng
       </h3>
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
           <CustomInput
             type="text"
             i_class="long-3"
-            label="Enter Product Size"
+            label="Thêm tình trạng"
             name="title"
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
@@ -95,7 +95,7 @@ const AddSize = () => {
             {formik.touched.title && formik.errors.title}
           </div>
           <button className="adc-btn" type="Submit">
-            {getSizeId !== undefined ? "Edit" : "Add"} Size
+            {getSizeId !== undefined ? "Sửa" : "Thêm"} Tình trạng
           </button>
         </form>
       </div>

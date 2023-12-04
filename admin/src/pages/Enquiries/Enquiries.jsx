@@ -18,7 +18,7 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Tên",
     dataIndex: "name",
   },
   {
@@ -26,20 +26,20 @@ const columns = [
     dataIndex: "email",
   },
   {
-    title: "Mobile",
+    title: "Số điện thoại",
     dataIndex: "mobile",
   },
   {
-    title: "Comment",
+    title: "Bình luận",
     dataIndex: "comment",
   },
   {
-    title: "Status",
+    title: "Trạng thái",
     dataIndex: "status",
   },
 
   {
-    title: "Action",
+    title: "Hành động",
     dataIndex: "action",
   },
 ];
@@ -74,15 +74,15 @@ const Enquiries = () => {
         <>
           <select
             name=""
-            defaultValue={enqState[i].status ? enqState[i].status : "Submitted"}
+            defaultValue={enqState[i].status ? enqState[i].status : "Đã gửi"}
             className="form-control form-select"
             id=""
             onChange={(e) => setEnquiryStatus(e.target.value, enqState[i]._id)}
           >
-            <option value="Submitted">Submitted</option>
-            <option value="Contacted">Contacted</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Resolved">Resolved</option>
+            <option value="Đã gửi">Đã gửi</option>
+            <option value="Đã liên hệ">Đã liên hệ</option>
+            <option value="Đang xử lý">Đang xử lý</option>
+            <option value="Đã giải quyết">Đã giải quyết</option>
           </select>
         </>
       ),
@@ -116,7 +116,7 @@ const Enquiries = () => {
   };
   return (
     <div>
-      <h3 className="enq-h3">Enquiries</h3>
+      <h3 className="enq-h3">Yêu cầu</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -126,7 +126,7 @@ const Enquiries = () => {
         performAction={() => {
           deleteEnq(enqId);
         }}
-        title="Are you sure you want to delete this enquiry?"
+        title="Bạn có chắc muốn xóa yêu cầu này"
       />
     </div>
   );

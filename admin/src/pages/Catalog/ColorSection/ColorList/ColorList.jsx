@@ -13,11 +13,11 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Tên",
     dataIndex: "name",
   },
   {
-    title: "Action",
+    title: "Hành động",
     dataIndex: "action",
   },
 ];
@@ -68,7 +68,7 @@ const ColorList = () => {
 
   return (
     <div>
-      <h3 className="Color-list-h3">Color List</h3>
+      <h3 className="Color-list-h3">Danh mục màu</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -78,7 +78,7 @@ const ColorList = () => {
         performAction={() => {
           deleteColor(colorId);
         }}
-        title="Are you sure you want to delete this color?"
+        title="Bạn chắc xóa màu này?"
       />
     </div>
   );

@@ -17,12 +17,12 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Tên",
     dataIndex: "name",
     sorter: (a, b) => a.name?.length - b.name?.length,
   },
   {
-    title: "Action",
+    title: "Hành động",
     dataIndex: "action",
   },
 ];
@@ -73,7 +73,7 @@ const BrandList = () => {
   
   return (
     <div>
-      <h3 className="Brandlist-list-h3">Brand List</h3>
+      <h3 className="Brandlist-list-h3">Danh sách thương hiệu</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -83,7 +83,7 @@ const BrandList = () => {
         performAction={() => {
           deleteBrand(brandId);
         }}
-        title="Are you sure you want to delete this brand?"
+        title="Bạn có chắc xóa thương hiệu này?"
       />
     </div>
   );

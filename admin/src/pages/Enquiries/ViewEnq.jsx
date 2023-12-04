@@ -35,17 +35,17 @@ const ViewEnq = () => {
   return (
     <div>
     <div className="view-enq-div-1">
-      <h3 className="enq-h3">View Enquiry</h3>
+      <h3 className="enq-h3">Xem yêu cầu</h3>
       <button
       className="view-enq-button-1"
       onClick={goBack}
       >
-     <BiArrowBack className="icon-viewEnq" /> Go Back
+     <BiArrowBack className="icon-viewEnq" /> Trở lại
       </button>
     </div>
     <div className="view-enq-div-2">
     <div className="view-enq-div-3">
-        <h6 className="h6andp-viewenq" >Mobile</h6>
+        <h6 className="h6andp-viewenq" >Số điện thoại:</h6>
         <p  className="h6andp-viewenq" >
         <a href={`tel:+92${enqMobile}`}>{enqMobile}</a>
         </p>
@@ -57,27 +57,27 @@ const ViewEnq = () => {
           </p>
         </div>
         <div className="view-enq-div-3">
-          <h6  className="h6andp-viewenq" >Comment:</h6>
+          <h6  className="h6andp-viewenq" >Bình luận:</h6>
           <p  className="h6andp-viewenq" >{enqComment}</p>
         </div>
         <div className="view-enq-div-3">
-          <h6 className="h6andp-viewenq" >Status:</h6>
+          <h6 className="h6andp-viewenq" >Trạng thái:</h6>
           <p  className="h6andp-viewenq" >{enqStatus}</p>
         </div>
         <div className="view-enq-div-3">
-          <h6  className="h6andp-viewenq" >Change Status:</h6>
+          <h6  className="h6andp-viewenq" >Thay đổi trạng thái:</h6>
           <div>
             <select
               name=""
-              defaultValue={enqStatus ? enqStatus : "Submitted"}
+              defaultValue={enqStatus ? enqStatus : "Đã gửi"}
               className="form-control-viewEnq form-select-viewEnq"
               id=""
               onChange={(e) => setEnquiryStatus(e.target.value, getEnqId)}
             >
-              <option value="Submitted">Submitted</option>
-              <option value="Contacted">Contacted</option>
-              <option value="In Progress">In Progress</option>
-              <option value="Resolved">Resolved</option>
+              <option value="Đã gửi">Đã gửi</option>
+              <option value="Đã liên hệ">Đã liên hệ</option>
+              <option value="Đang xử lý">Đang xử lý</option>
+              <option value="Đã giải quyết">Đã giải quyết</option>
             </select>
           </div>
         </div>

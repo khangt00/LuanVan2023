@@ -12,23 +12,23 @@ const columns = [
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Tên",
     dataIndex: "name",
   },
   {
-    title: "Product Count",
+    title: "Số lượng sản phẩm",
     dataIndex: "product",
   },
   {
-    title: "Total Price",
+    title: "Tổng giá",
     dataIndex: "price",
   },
   {
-    title: "Total Price After Discount",
+    title: "Tổng giá giảm",
     dataIndex: "dprice",
   },
   {
-    title: "Status",
+    title: "Trạng thái",
     dataIndex: "status",
   },
 ];
@@ -71,18 +71,18 @@ const Dashboard = () => {
   console.log(orderState);
   useEffect(() => {
     let monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "Tháng 1",
+      "Tháng 2",
+      "Tháng 3",
+      "Tháng 4",
+      "Tháng 5",
+      "Tháng 6",
+      "Tháng 7",
+      "Tháng 8",
+      "Tháng 9",
+      "Tháng 10",
+      "Tháng 11",
+      "Tháng 12",
     ];
     let data = [];
     let monthlyOrderCount = [];
@@ -178,37 +178,37 @@ for (let i = 0; i < orderState?.length; i++) {
       <div className="dash-div-1">
         <div className="dash-div-2">
           <div>
-            <p className="desc">Total Income</p> <h2 className="dash-h2 sub-title">VND  {yearlyDataState && yearlyDataState[0]?.amount}</h2>
+            <p className="desc">Tổng thu nhập</p> <h2 className="dash-h2 sub-title">VND  {yearlyDataState && yearlyDataState[0]?.amount}</h2>
           </div>
           <div className="dash-div-5">
-            <p className="desc" style={{ marginBottom: 0 }}>Yearly Total Icome</p>
+            <p className="desc" style={{ marginBottom: 0 }}>Tổng thu nhập hằng năm</p>
           </div>
         </div>
         <div className="dash-div-3">
           <div>
-            <p className="desc">Total Sales</p> <h2 className="dash-h2 sub-title">{yearlyDataState && yearlyDataState[0]?.count}</h2>
+            <p className="desc">Tổng đơn hàng</p> <h2 className="dash-h2 sub-title">{yearlyDataState && yearlyDataState[0]?.count}</h2>
           </div>
           <div className="dash-div-5">
-            <p className="desc" style={{ marginBottom: 0 }}>Yearly Total Sales</p>
+            <p className="desc" style={{ marginBottom: 0 }}>Tổng đơn hàng hằng năm</p>
           </div>
         </div>
       </div>
       <div className="mo-or">
       <div style={{ marginTop: "1.5rem" ,"flexGrow":1 , "width" :"50%"}}>
-        <h3 className="dashh-h3">Income Statics</h3>
+        <h3 className="dashh-h3">Thống kê thu nhập</h3>
         <div>
           <Column {...config} />
         </div>
       </div>
       <div style={{ marginTop: "1.5rem" ,"flexGrow":1 , "width" :"50%"}}>
-        <h3 className="dashh-h3">Sales Statics</h3>
+        <h3 className="dashh-h3">Thống kê đơn hàng</h3>
         <div>
           <Column {...config2} />
         </div>
       </div>
       </div>
       <div style={{ marginTop: "1.5rem"}}>
-        <h3 className="dashh-h3">Recent Orders</h3>
+        <h3 className="dashh-h3">Đơn hàng gần đây</h3>
         <div>
         <Table columns={columns} dataSource={orderData} />
         </div>
