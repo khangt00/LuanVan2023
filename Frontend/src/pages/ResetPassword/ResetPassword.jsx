@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetPassword } from "../../features/user/userSlice";
 
 const resetSchema = yup.object({
-  password: yup.string().required("Password is required"),
+  password: yup.string().required("Mật khẩu không được trống"),
 });
 
 const ResetPassword = () => {

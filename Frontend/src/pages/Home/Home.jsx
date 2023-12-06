@@ -170,7 +170,7 @@ const Home = () => {
                   <img src={service1} alt="services" />
                   <div>
                     <h6>Miễn phí giao hàng</h6>
-                    <p>Từ tất cả đơn hàng trên 50.000 VND</p>
+                    <p>Từ tất cả đơn hàng trên 30.000 VND</p>
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>

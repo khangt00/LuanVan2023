@@ -276,11 +276,11 @@ const forgotPasswordToken = asyncHandler(async (req, res) => {
   try {
     const token = await user.createPasswordResetTokan();
     await user.save();
-    const resetURL = `Hi, Please Click on the link to reset your Password. This link is valid till 10 minute from now. <a href='http://localhost:3000/reset-password/${token}'>Click Here <a/>`;
+    const resetURL = `Xin chào, Vui lòng nhấp vào liên kết để đặt lại mật khẩu của bạn. Liên kết này có hiệu lực đến 10 phút kể từ bây giờ. <a href='http://localhost:3000/reset-password/${token}'>Nhấp đây <a/>`;
     const data = {
       to: email,
-      text: "Hello Sir/Mam",
-      subject: "Forgot Password Link ",
+      text: "Chào bạn",
+      subject: "Đường dẫn đặt lại mật khẩu ",
       htm: resetURL,
     };
     sendEmail(data);
@@ -417,8 +417,8 @@ const createOrder = asyncHandler(async (req, res) => {
     });
     const data={
       to: email,
-      text:"hello Sir/Mam",
-      subject:"Your Order",
+      text:"Chào bạn",
+      subject:"Đơn hàng của bạn",
       htm:`<html>
       <head>
       </head>
@@ -434,16 +434,16 @@ const createOrder = asyncHandler(async (req, res) => {
                       text-align: center;">
               <h1 style="padding: 5px 0px 0px 0px;">TOY 2HAND</h1>
               <p style="padding: 0px 0px 10px 0px;">
-              Thank you for shopping from us.</p>
-              <p style="padding: 10px 0px 0px 0px;">If you did not register with us, please ignore this email.</p>
+              Cảm ơn bạn đã mua hàng từ cửa hàng tôi.</p>
+              <p style="padding: 10px 0px 0px 0px;">Nếu bạn chưa đăng ký với cửa hàng tôi, vui lòng bỏ qua email này.</p>
           <hr style="border-top: 1px solid #232f3e; border-left: 0px, marginTop:5px">
           <div class="footer content" style="margin: 0 auto;width: fit-content;">
               <p
                   style="margin-left: auto;margin-right: auto;color: white;font-size: small;">
-                  HOC Ecommerce. Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.</p>
-                  <p style="margin-left: auto;margin-right: auto; padding: 0px 0px 10px 0px;color: white;font-size: small;">Explore our collection of shoes, Beauty, Mobiles, sneakers, and more.</p>
+                  TOY 2HAND. Cửa hàng chúng tôi luôn sẵn sàng phục vụ bạn, cung cấp đầy đủ các món đồ chơi cũ để giúp bạn thu hút và quay trở lại mua hàng.</p>
+                  <p style="margin-left: auto;margin-right: auto; padding: 0px 0px 10px 0px;color: white;font-size: small;">Khám phá những món đồ chơi cũ với mức giá phải chăng và hơn thế nữa.</p>
           </div>
-          <p style="padding: 10px 0px 10px 0px"> &copy;  HOC Store. All rights reserved.</p>
+          <p style="padding: 10px 0px 10px 0px"> &copy; Cửa hàng TOY 2HAND. Đã đăng ký bản quyền.</p>
       </div>
       </body>
       </html>`,

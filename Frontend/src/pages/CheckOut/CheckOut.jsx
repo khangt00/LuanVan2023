@@ -152,7 +152,7 @@ const CheckOut = () => {
       handlePaystackPayment(onClosePaystack,onSuccessPayment);
     } else if (option1 === "cod") {
       createOrderWithPaymentInfo({
-        method: "Cash On Delivery",
+        method: "Thanh toán khi nhận hàng",
       });
     }
 
@@ -453,7 +453,7 @@ const CheckOut = () => {
               <div className="checkout-div-05">
                 <h4 className="total">Tổng</h4>
                 <h5 className="total-price">
-                  VND {totalAmount ? totalAmount + 5 : "0"}
+                  VND {totalAmount ? totalAmount + 30000 : "0"}
                 </h5>
               </div>
             </div>

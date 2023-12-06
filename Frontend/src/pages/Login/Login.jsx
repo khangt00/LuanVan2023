@@ -9,8 +9,8 @@ import {useDispatch, useSelector} from "react-redux";
 import { loginUser } from "../../features/user/userSlice";
 
 const loginSchema = yup.object({
-  email: yup.string().email().required("Email Address is required"),
-  password: yup.string().required("Password is required"), 
+  email: yup.string().email().required("Email không được trống"),
+  password: yup.string().required("Mật khẩu không được trống"), 
 })
 
 

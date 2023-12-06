@@ -56,8 +56,8 @@ const Profile = () => {
       });
   return (
     <>
-      <Meta title="Profile"/>
-      <BreadCrumb title="Profile" />
+      <Meta title="Thông tin"/>
+      <BreadCrumb title="Thông tin" />
       <div className="profile-page home-wrapper-02">
         <div className="profile-page-container-1">
           <div className="profile-page-row-1">

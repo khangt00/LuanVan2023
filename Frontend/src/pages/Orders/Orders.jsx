@@ -65,16 +65,16 @@ const Orders = () => {
                         <div className="order-page-coloum-5">
                           <div className="order-page-row-3">
                             <div className="order-page-coloum-2">
-                              <p className="pad">Product Name</p>
+                              <p className="pad">Tên sản phẩm</p>
                             </div>
                             <div className="order-page-coloum-3">
-                              <p>Quantity</p>
+                              <p>Số lượng</p>
                             </div>
                             <div className="order-page-coloum-3">
-                              <p>Price</p>
+                              <p>Giá tiền</p>
                             </div>
                             <div className="order-page-coloum-3">
-                              <p>Color</p>
+                              <p>Màu</p>
                             </div>
                             {item?.orderItems?.map((i, index) => {
                               return (

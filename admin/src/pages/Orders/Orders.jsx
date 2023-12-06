@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "./Orders.css";
 import { Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { BiEdit } from "react-icons/bi";
-import { AiOutlineDelete } from "react-icons/ai";
+// import { BiEdit } from "react-icons/bi";
+// import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { getOrders, updateAOrder } from "../../features/auth/authSlice";
 
@@ -66,8 +66,8 @@ const Orders = () => {
             <option value="Đã đặt hàng" disabled selected>
               Đã đặt hàng
             </option>
-            <option value="Đã vận chuyển">Đã vận chuyển</option>
             <option value="Đang xử lý">Đang xử lý</option>
+            <option value="Đã bàn giao đơn vị vận chuyển">Đã bàn giao đơn vị vận chuyển</option>
             <option value="Giao hàng">Giao hàng</option>
             <option value="Đã giao hàng">Đã giao hàng</option>
           </select>

@@ -172,7 +172,7 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.createdUser = action.payload;
         if (state.isSuccess === true) {
-          toast.success("User Created SuccessFully");
+          toast.success("Người dùng đã tạo thành công");
         }
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -193,7 +193,7 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.user = action.payload;
         if (state.isSuccess === true) {
-          toast.success("User logged In SuccessFully");
+          toast.success("Đăng nhập thành công");
         }
       })  
       .addCase(loginUser.rejected, (state, action) => {
@@ -271,7 +271,7 @@ export const authSlice = createSlice({
         state.isSuccess = false;
         state.message = action.error;
         if (state.isSuccess === false) {
-          toast.error("Something Went Wrong");
+          toast.error("Đã xảy ra lỗi");
         }
       })
       .addCase(updateCartProduct.pending, (state) => {

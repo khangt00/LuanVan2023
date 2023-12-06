@@ -11,9 +11,9 @@ const Payment = ({ closeModal, handlePaymentOption }) => {
       <div className="payment-modal">
         <h2>Chọn hình thức thanh toán</h2>
         <div className="payment-options">
-          <button onClick={() => handlePayment("vnpay")}>
+          {/* <button onClick={() => handlePayment("vnpay")}>
             Thanh toán VNPAY
-          </button>
+          </button> */}
           {/* <button onClick={() => handlePayment("paystack")}>
             Pay with PayStack
           </button> */}

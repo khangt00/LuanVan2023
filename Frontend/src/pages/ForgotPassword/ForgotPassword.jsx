@@ -9,7 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { forgotPasswordToken } from '../../features/user/userSlice';
 
 const emailSchema = yup.object({
-  email: yup.string().email().required("Email Address is required"),
+  email: yup.string().email().required("Địa chỉ Email không được trống"),
 })
 const ForgotPassword = () => {
   const dispatch = useDispatch();
