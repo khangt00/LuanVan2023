@@ -29,12 +29,13 @@ const Header = () => {
 
   useEffect(() => {
     let sum = 0;
+    console.log("run: ", cartState)
     for (let index = 0; index < cartState?.length; index++) {
       sum =
         sum +
         Number(cartState[index].quantity) * Number(cartState[index].price);
+      }
       setTotalAmount(sum);
-    }
   }, [cartState]);
 
   useEffect(() => {

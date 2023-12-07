@@ -8,6 +8,8 @@ const { generateRefreshToken } = require("../config/refreshtoken");
 const { sendEmail } = require("./emailController");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
+const { ObjectId } = require('mongodb');
+
 
 const createUser = asyncHandler(async (req, res) => {
   const email = req.body.email;
@@ -415,6 +417,13 @@ const createOrder = asyncHandler(async (req, res) => {
       paymentInfo,
       user: _id,
     });
+    console.log('orderItems: ', orderItems)
+    if (order) {
+      orderItems.map(async prd => {
+        const id =  new ObjectId(prd.id)
+        const deletedProduct = await Cart.deleteOne({_id: id});
+      })
+    }
     const data={
       to: email,
       text:"Chào bạn",

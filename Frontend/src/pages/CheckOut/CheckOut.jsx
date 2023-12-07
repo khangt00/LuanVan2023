@@ -15,6 +15,7 @@ import Payment from "../Payment/Payment";
 import { config } from "../../utils/axiosconfig";
 import { deleteUserCart } from "../../features/user/userSlice";
 import { usePaystackPayment } from "react-paystack";
+import {getUserCart} from "../../features/user/userSlice";
 
 const shippingSchema = yup.object({
   firstName: yup.string().required("First Name is required"),
@@ -38,10 +39,24 @@ const CheckOut = () => {
   const orderState = useSelector((state) => state?.auth?.orderCreated?.order);
   const user = useSelector((state) => state?.auth?.user);
 
+  const getTokenFromLocalStorage = localStorage.getItem("customer")
+    ? JSON.parse(localStorage.getItem("customer"))
+    : null;
+
+  const config2 = {
+    headers: {
+      Authorization: `Bearer ${
+        getTokenFromLocalStorage !== null ? getTokenFromLocalStorage.token : ""
+      }`,
+      Accept: "application/json",
+    },
+  };
+
   useEffect(() => {
     let items = [];
     for (let index = 0; index < cartState?.length; index++) {
       items.push({
+        id: cartState[index]._id,
         product: cartState[index].productId._id,
         quantity: cartState[index].quantity,
         color: cartState[index].color._id,
@@ -172,7 +187,8 @@ const CheckOut = () => {
         paymentInfo: paymentInfo,
       };
 
-      dispatch(createAnOrder(orderData));
+      await dispatch(createAnOrder(orderData));
+      dispatch(getUserCart(config2));
     } catch (error) {
       console.error("Error creating order:", error);
     }
